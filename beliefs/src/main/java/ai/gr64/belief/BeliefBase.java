@@ -11,34 +11,23 @@ public class BeliefBase {
         return null;
     }
 
-    public void Clear() {
+    public void contraction(Predicate pre){
+
+    }
+    public void expansion(Predicate pre){
+
+    }
+    public void revision(Predicate pre){
+
+    }
+    public void extraction(Predicate pre){
+
+    }
+    public void consolidation(Predicate pre){
+
+    }
+    public void merging(Predicate pre){
 
     }
 
-    public void Update() {
-    }
-
-    public void Consolidation() {
-    }
-
-    public void SemiRevision() {
-    }
-
-    public void SelectiveRevision() {
-    }
-
-    public void ShieldedContraction() {
-    }
-
-    public void Replacement() {
-    }
-
-    public void Merge() {
-    }
-
-    public void MultipleContractionAndRevision() {
-    }
-
-    public void IndeterministicBeliefChange() {
-    }
 }
