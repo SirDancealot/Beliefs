@@ -11,4 +11,9 @@ public class MmPossibility {
         this.c3 = c3;
         this.c4 = c4;
     }
+    
+    //set value nr. x
+    public void setValue(int pos, Color color) {
+
+    }
 }

@@ -1,73 +1,47 @@
 package ai.gr64.Mastermind.Game;
 import java.util.Scanner;
 
+import ai.gr64.Mastermind.MmPossibility;
+
 public class Logic {
+    private static MmPossibility correct = null;
+    private static MmPossibility[] guesses = new MmPossibility[10];
     
     //init metode til at starte spillet forfra. reset nyt spil.(ikke sikker på hvad metoden skal have i argument)
     public static void init(String[] args) {
         System.out.println("game has started!");
 
+        guesses = new MmPossibility[10];
 
-        //array til at holde styr på alle gæt for hver row
-        int[] row_1;
-        int[] row_2;
-        int[] row_3;
-        int[] row_4;
-        int[] row_5;
-        int[] row_6;
-        int[] row_7;
-        int[] row_8;
-        int[] row_9;
-        int[] row_10;
-        
-        row_1 = new int[4];//array der skal indeholde de forskellige gæt
-        row_2 = new int[4];//array der skal indeholde de forskellige gæt
-        row_3 = new int[4];//array der skal indeholde de forskellige gæt
-        row_4 = new int[4];//array der skal indeholde de forskellige gæt
-        row_5 = new int[4];//array der skal indeholde de forskellige gæt
-        row_6 = new int[4];//array der skal indeholde de forskellige gæt
-        row_7 = new int[4];//array der skal indeholde de forskellige gæt
-        row_8 = new int[4];//array der skal indeholde de forskellige gæt
-        row_9 = new int[4];//array der skal indeholde de forskellige gæt
-        row_10 = new int[4];//array der skal indeholde de forskellige gæt
+        // Generate what the answer will be
+    }
 
-        /*pseudo(ish) for restart
-        if(new game button pressed){
-            System.out.println("game restarted");
-            for(i=1; i<4; i++){
-                row_1[i] = empty;
-                row_2[i] = empty;
-                row_3[i] = empty;
-                row_4[i] = empty;
-                row_5[i] = empty;
-                row_6[i] = empty;
-                row_7[i] = empty;
-                row_8[i] = empty;
-                row_9[i] = empty;
-                row_10[i] = empty;
-            }*/
+    public static matchRate guess(MmPossibility guess) {
+        // compare guess and correct, return how many colors are correct position, or just the right color (red and white pegs)
     }
 
     //guess metode til at gætte, den returnerer hvor godt gættet var.(mm possibility) giv dette til spillet. Denne gør så man kan komme med et gæt.
-    public static void guess(String[] args) {
+    public static void makeGuess(String[] args) {
         System.out.println("have a guess!");
         System.out.println("guesses go from left to right");
-        System.out.println("Type 0 for red");
-        System.out.println("Type 1 for black");
-        System.out.println("Type 2 for green");
-        System.out.println("Type 3 for yellow");
-        System.out.println("Type 4 for magenta");
-        System.out.println("Type 5 for cyan");
+        System.out.println("Type r for red");
+        System.out.println("Type b for black");
+        System.out.println("Type g for green");
+        System.out.println("Type y for yellow");
+        System.out.println("Type m for magenta");
+        System.out.println("Type c for cyan");
 
         Scanner scan = new Scanner(System.in);
         int colourGuessed = scan.nextInt();
 
+        MmPossibility guess = new MmPossibility(c1, c2, c3, c4);
+
         for (int j = 0; j < 4; j++){
-            colourGuessed = scan.nextInt();
+            colourGuessed = scan.nextLine().split(" ");
             
-            row_1[j] = colourGuessed;
             if(colourGuessed == 0){
                 System.out.println("from the left, spot number " + j + "has been set to red");
+                guess.setValue(j, color);
             } else if(colourGuessed == 1){
                 System.out.println("from the left, spot number " + j + "has been set to black");
             } else if(colourGuessed == 2){
@@ -80,6 +54,15 @@ public class Logic {
                 System.out.println("from the left, spot number " + j + "has been set to cyan");
             } else {
                 System.out.prinln("Error. invalid input. Number has to be between 0-5!");
+            }
+
+            switch (colourGuessed) {
+                case 'r':
+                    guess.setValue(j, Color.RED);
+                    break;
+            
+                default:
+                    break;
             }
         }
 
