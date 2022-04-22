@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="1024.0" minWidth="1920.0" prefHeight="1024.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="TextFieldQube" layoutX="313.0" layoutY="277.0" prefHeight="59.0" prefWidth="913.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TextFieldPoss" layoutX="313.0" layoutY="143.0" prefHeight="59.0" prefWidth="913.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TextFieldI" layoutX="313.0" layoutY="425.0" prefHeight="59.0" prefWidth="913.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="313.0" layoutY="645.0" prefHeight="59.0" prefWidth="913.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <Button fx:id="ButtonNot" layoutX="150.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="ButtonAnd" layoutX="275.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonOr" layoutX="400.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonElementsInSet" layoutX="525.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNotElement" layoutX="650.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonIntersection" layoutX="775.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonUniverse" layoutX="1511.0" layoutY="143.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Universe">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonPossibilities" layoutX="1511.0" layoutY="243.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Possibilities">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonUpdate" layoutX="1511.0" layoutY="343.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Update">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonUnion" layoutX="900.0" layoutY="771.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonSubsetEqual" layoutX="213.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonNotSubset" layoutX="338.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonPreferenceOrdering" layoutX="463.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonContraction" layoutX="588.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonRevision" layoutX="713.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonExpansion" layoutX="838.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonMastermind" layoutX="1511.0" layoutY="443.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Mastermind">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TextQube" editable="false" layoutX="176.0" layoutY="277.0" prefHeight="59.0" prefWidth="59.0" text="Q">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TextPoss" editable="false" layoutX="176.0" layoutY="143.0" prefHeight="59.0" prefWidth="59.0" text="P">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TextI" editable="false" layoutX="176.0" layoutY="425.0" prefHeight="59.0" prefWidth="59.0" text="I">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+      <TextField editable="false" layoutX="176.0" layoutY="645.0" prefHeight="59.0" prefWidth="59.0" text="K">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>
