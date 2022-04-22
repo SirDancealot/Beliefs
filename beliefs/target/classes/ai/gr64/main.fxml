@@ -4,8 +4,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Pane fx:id="mainPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="1024.0" minWidth="1920.0" prefHeight="1024.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="mainPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="1024.0" minWidth="1920.0" prefHeight="1024.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField fx:id="TextFieldQube" layoutX="313.0" layoutY="277.0" prefHeight="59.0" prefWidth="913.0">
          <font>
@@ -112,25 +113,26 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <TextField fx:id="TextQube" editable="false" layoutX="176.0" layoutY="277.0" prefHeight="59.0" prefWidth="59.0" text="Q">
+      <Text fx:id="TextQube" layoutX="182.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Q">
          <font>
             <Font size="30.0" />
          </font>
-      </TextField>
-      <TextField fx:id="TextPoss" editable="false" layoutX="176.0" layoutY="143.0" prefHeight="59.0" prefWidth="59.0" text="P">
+      </Text>
+      <Text fx:id="TextPoss" layoutX="185.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
          <font>
             <Font size="30.0" />
          </font>
-      </TextField>
-      <TextField fx:id="TextI" editable="false" layoutX="176.0" layoutY="425.0" prefHeight="59.0" prefWidth="59.0" text="I">
+      </Text>
+      <Text fx:id="TextI" layoutX="189.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I">
          <font>
             <Font size="30.0" />
          </font>
-      </TextField>
-      <TextField editable="false" layoutX="176.0" layoutY="645.0" prefHeight="59.0" prefWidth="59.0" text="K">
+      </Text>
+      <Text fx:id="TextBase" layoutX="184.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
          <font>
             <Font size="30.0" />
          </font>
-      </TextField>
+      </Text>
+      
    </children>
 </Pane>
