@@ -3,7 +3,7 @@ package ai.gr64.belief.operations;
 import ai.gr64.belief.Possibilities;
 import ai.gr64.belief.interfaces.IOpp;
 
-public class PreferenceOrdering implements IOpp {
+public class Parenthesis implements IOpp {
 
     private IOpp opp1 = null;
     private IOpp opp2 = null;
