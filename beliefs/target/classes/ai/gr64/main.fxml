@@ -133,7 +133,7 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button fx:id="parantesisButton" layoutX="963.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="parenthesisButton" layoutX="963.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
