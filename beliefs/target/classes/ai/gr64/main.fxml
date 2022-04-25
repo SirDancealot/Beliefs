@@ -6,54 +6,54 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="mainPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="1024.0" minWidth="1920.0" prefHeight="1024.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="mainPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="1024.0" minWidth="1920.0" prefHeight="1024.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="TextFieldQube" layoutX="313.0" layoutY="277.0" prefHeight="59.0" prefWidth="913.0">
+      <TextField fx:id="qubeTextField" layoutX="313.0" layoutY="277.0" prefHeight="59.0" prefWidth="913.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TextFieldPoss" layoutX="313.0" layoutY="143.0" prefHeight="59.0" prefWidth="913.0">
+      <TextField fx:id="possibilityTextField" layoutX="313.0" layoutY="143.0" prefHeight="59.0" prefWidth="913.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField fx:id="TextFieldI" layoutX="313.0" layoutY="425.0" prefHeight="59.0" prefWidth="913.0">
+      <TextField fx:id="iTextField" layoutX="313.0" layoutY="425.0" prefHeight="59.0" prefWidth="913.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <TextField layoutX="313.0" layoutY="645.0" prefHeight="59.0" prefWidth="913.0">
+      <TextField fx:id="baseTextField" layoutX="313.0" layoutY="645.0" prefHeight="59.0" prefWidth="913.0">
          <font>
             <Font size="30.0" />
          </font>
       </TextField>
-      <Button fx:id="ButtonNot" layoutX="150.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="notButton" layoutX="150.0" layoutY="771.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="ButtonAnd" layoutX="275.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="andButton" layoutX="275.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleAnd" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonOr" layoutX="400.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="orButton" layoutX="400.0" layoutY="771.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonElementsInSet" layoutX="525.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="elementsInSetButton" layoutX="525.0" layoutY="771.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNotElement" layoutX="650.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="notElementButton" layoutX="650.0" layoutY="771.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonIntersection" layoutX="775.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="intersectionButton" layoutX="775.0" layoutY="771.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
@@ -73,37 +73,37 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonUnion" layoutX="900.0" layoutY="771.0" mnemonicParsing="false" text="O">
+      <Button fx:id="unionButton" layoutX="900.0" layoutY="771.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonSubsetEqual" layoutX="213.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="subsetEqualButton" layoutX="213.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonNotSubset" layoutX="338.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="notSubsetButton" layoutX="338.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonPreferenceOrdering" layoutX="463.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="preferenceOrderingButton" layoutX="463.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonContraction" layoutX="588.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="contractionButton" layoutX="588.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonRevision" layoutX="713.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="revisionButton" layoutX="713.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="buttonExpansion" layoutX="838.0" layoutY="891.0" mnemonicParsing="false" text="O">
+      <Button fx:id="expansionButton" layoutX="838.0" layoutY="891.0" mnemonicParsing="false" text="O">
          <font>
             <Font size="30.0" />
          </font>
@@ -133,6 +133,11 @@
             <Font size="30.0" />
          </font>
       </Text>
+      <Button fx:id="parantesisButton" layoutX="963.0" layoutY="891.0" mnemonicParsing="false" text="O">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
       
    </children>
 </Pane>
