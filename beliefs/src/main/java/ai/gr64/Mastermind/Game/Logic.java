@@ -13,9 +13,8 @@ public class Logic {
         System.out.println("game has started!");
 
         guesses = new MmPossibility[10];
-        //colourSegment = new int[4];
-        // Generate what the answer will be
-
+        
+        //Generate what the answer will be
         correct = new MmPossibility(Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK);
 
         Random r = new Random();
@@ -26,8 +25,12 @@ public class Logic {
 
     }
 
-    public static matchRate guess(MmPossibility guess) {
+    public static matchRate guess(MmPossibility guess) {//guess skal returnere hvor godt gættet var, ikke om det er korrekt eller forkert
         // compare guess and correct, return how many colors are correct position, or just the right color (red and white pegs)
+
+        //evt brug equals metode på Mmpossibility
+        //anden mulighed, sammenlign manuelt hver farve og possition i guess med correct.
+
         /*for(i = 0; i < 10; i++){
             if(MmPossibility[i] == colourSegmant[]){
                 return guess;
