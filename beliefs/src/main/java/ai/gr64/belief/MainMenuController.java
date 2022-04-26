@@ -91,8 +91,6 @@ public class MainMenuController {
         
         
         
-        i.addOpp(new And());
-        
         
         
     }

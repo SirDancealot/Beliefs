@@ -5,7 +5,7 @@ public enum Color {
     RED(0),
     BLACK(1),
     GREEN(2),
-    YELLOW(3),
+    ORANGE(3),
     MAGENTA(4),
     CYAN(5);
 
@@ -23,7 +23,7 @@ public enum Color {
             case 2:
                 return GREEN;
             case 3:
-                return YELLOW;
+                return ORANGE;
             case 4:
                 return MAGENTA;
             case 5:
@@ -32,5 +32,26 @@ public enum Color {
             default:
                 throw new Error("Value must be in range 0-5");
         }
+    }
+
+    public static String getColor(Color color) {
+        switch (color) {
+            case RED:
+                return "DARKRED";
+            case BLACK:
+                return "BLACK";
+            case GREEN:
+                return "LAWNGREEN";
+            case ORANGE:
+                return "ORANGERED";
+            case MAGENTA:
+                return "DEEPPINK";
+            case CYAN:
+                return "CYAN";
+        
+            default:
+                throw new Error("Value must be in range 0-5");
+        }
+        
     }
 }
