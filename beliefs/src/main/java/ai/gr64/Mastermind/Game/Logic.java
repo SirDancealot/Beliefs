@@ -12,12 +12,18 @@ public class Logic {
         System.out.println("game has started!");
 
         guesses = new MmPossibility[10];
-
+        //colourSegment = new int[4];
         // Generate what the answer will be
+
     }
 
     public static matchRate guess(MmPossibility guess) {
         // compare guess and correct, return how many colors are correct position, or just the right color (red and white pegs)
+        /*for(i = 0; i < 10; i++){
+            if(MmPossibility[i] == colourSegmant[]){
+                return guess;
+            }
+        }*/
     }
 
     //guess metode til at gætte, den returnerer hvor godt gættet var.(mm possibility) giv dette til spillet. Denne gør så man kan komme med et gæt.
@@ -39,29 +45,34 @@ public class Logic {
         for (int j = 0; j < 4; j++){
             colourGuessed = scan.nextLine().split(" ");
             
-            if(colourGuessed == 0){
-                System.out.println("from the left, spot number " + j + "has been set to red");
-                guess.setValue(j, color);
-            } else if(colourGuessed == 1){
-                System.out.println("from the left, spot number " + j + "has been set to black");
-            } else if(colourGuessed == 2){
-                System.out.println("from the left, spot number " + j + "has been set to green");
-            } else if(colourGuessed == 3){
-                System.out.println("from the left, spot number " + j + "has been set to yellow");
-            } else if(colourGuessed == 4){
-                System.out.println("from the left, spot number " + j + "has been set to magenta");
-            } else if(colourGuessed == 5){
-                System.out.println("from the left, spot number " + j + "has been set to cyan");
-            } else {
-                System.out.prinln("Error. invalid input. Number has to be between 0-5!");
-            }
 
             switch (colourGuessed) {
                 case 'r':
                     guess.setValue(j, Color.RED);
+                    System.out.println("from the left, spot number " + j + "has been set to red");
                     break;
-            
+                case 'b':
+                    guess.setValue(j, Color.BLACK);
+                    System.out.println("from the left, spot number " + j + "has been set to black");
+                    break;
+                case 'g':
+                    guess.setValue(j, Color.GREEN);
+                    System.out.println("from the left, spot number " + j + "has been set to green");
+                    break;
+                case 'y':
+                    guess.setValue(j, Color.YELLOW);
+                    System.out.println("from the left, spot number " + j + "has been set to yellow");
+                    break;
+                case 'm':
+                    guess.setValue(j, Color.MAGENTA);
+                    System.out.println("from the left, spot number " + j + "has been set to magenta");
+                    break;
+                case 'c':
+                    guess.setValue(j, Color.CYAN);
+                    System.out.println("from the left, spot number " + j + "has been set to cyan");
+                    break;
                 default:
+                    System.out.println("Error.");
                     break;
             }
         }
