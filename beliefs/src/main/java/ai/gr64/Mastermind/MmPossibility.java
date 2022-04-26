@@ -16,4 +16,9 @@ public class MmPossibility {
     public void setValue(int pos, Color color) {
 
     }
+
+    //get value nr. x
+    public Color getValue() {
+
+    }
 }
