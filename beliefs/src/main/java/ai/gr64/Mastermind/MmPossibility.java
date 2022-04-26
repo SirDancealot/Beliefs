@@ -13,13 +13,36 @@ public class MmPossibility{
     }
     
     //set value nr. x
-    public void setValue(int pos, Color color) {
-
+    public void setValue(int pos, Color color) {//lav dette som switchcase istedet
+        if (pos == 0){
+            c1 = color;
+        }
+        if (pos == 1){
+            c2 = color;
+        }
+        if (pos == 2){
+            c3 = color;
+        }
+        if (pos == 3){
+            c4 = color;
+        }
     }
 
     //get value nr. x
-    public Color getValue(int pos) {
-
+    public Color getValue(int pos){//lav dette til switchcase
+        if(pos == 0){
+            return c1;
+        }
+        if(pos == 1){
+            return c2;
+        }
+        if(pos == 2){
+            return c3;
+        }
+        if(pos == 3){
+            return c4;
+        }
+        throw new Error("Pos out of bound. Must be in range of 0-3");
     }
 
     @Override
