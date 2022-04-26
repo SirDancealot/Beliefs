@@ -1,4 +1,5 @@
 package ai.gr64.Mastermind.Game;
+import java.util.Random;
 import java.util.Scanner;
 
 import ai.gr64.Mastermind.MmPossibility;
@@ -14,6 +15,14 @@ public class Logic {
         guesses = new MmPossibility[10];
         //colourSegment = new int[4];
         // Generate what the answer will be
+
+        correct = new MmPossibility(Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK);
+
+        Random r = new Random();
+        for (int i = 0; i < 4; i++) {
+            int color = r.nextInt(6);
+            correct.setValue(i, Color.fromValue(color));
+        }
 
     }
 
