@@ -8,6 +8,8 @@ import javafx.scene.shape.Circle;
 
 public class MastermindController {
     Color c1, c2, c3, c4, selectedColour;
+    int[][] circleArray = new int[4][10];
+
 
     
     //Colour circles
@@ -42,39 +44,56 @@ public class MastermindController {
     @FXML
     private Circle guess4Row1, guess4Row2, guess4Row3, guess4Row4, guess4Row5, guess4Row6, guess4Row7, guess4Row8, guess4Row9, guess4Row10;
 
+    private void circleCreation() {
+        for (int i = 0; i < 4; i++) {
+            
+            for (int j = 0; j < 10; j++) {
+                
+            }
+            
+        }
+        
+    }
 
-
+    @FXML
     public void redButton() {
         selectedColour = Color.RED;
     }
 
+    @FXML
     public Circle getGuess1Row1() {
         guess1Row1.setFill(Paint.valueOf(Color.getColor(selectedColour)));
         return guess1Row1;
     }
 
+    @FXML
     public void blackButton() {
         selectedColour = Color.BLACK;
     }
 
+    @FXML
     public void greenButton() {
         selectedColour = Color.GREEN;
     }
 
+    @FXML
     public void orangeButton() {
         selectedColour = Color.ORANGE;
     }
 
+    @FXML
     public void magentaButton() {
         selectedColour = Color.MAGENTA;
     }
 
+    @FXML
     public void cyanButton() {
         selectedColour = Color.CYAN;
     }
 
     MmPossibility colours = new MmPossibility(c1, c2, c3, c4);
 
+    @FXML
     public MmPossibility guessButton(){
         
 
