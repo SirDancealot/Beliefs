@@ -30,8 +30,8 @@ public class App {
     public static void main(String[] args) {
         // launch();
         Logic.init();
-        Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.BLACK, Color.GREEN));
-        Logic.guess(new MmPossibility(Color.MAGENTA, Color.GREEN, Color.BLACK, Color.CYAN));
+        Logic.forceCorrect(new MmPossibility(Color.MAGENTA, Color.GREEN, Color.BLACK, Color.CYAN));
+        Logic.guess(new MmPossibility(Color.BLACK, Color.CYAN, Color.BLACK, Color.GREEN));
         
     }
 

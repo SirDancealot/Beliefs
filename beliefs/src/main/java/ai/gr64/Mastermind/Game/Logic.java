@@ -42,19 +42,22 @@ public class Logic {
             // return type; skal return 4 røde pins. kordiner med Steph, hvilken return type det skulle være.
         }else if(guess != correct){
             
-            boolean[] used = new boolean[] {false, false, false, false};
+            boolean[] usedCorrect = new boolean[] {false, false, false, false};
+            boolean[] usedGuess = new boolean[] {false, false, false, false};
 
             for(int i = 0; i < 4; i++){
                 if(guess.getValue(i) == correct.getValue(i)){
                     redpins++;
-                    used[i] = true;
+                    usedCorrect[i] = true;
+                    usedGuess[i] = true;
                     continue;
                 }
             }
             for(int i = 0; i < 4; i++){
                 for(int j = 0; j < 4; j++){
-                    if(guess.getValue(j) == correct.getValue(i) && !used[i]){
-                        used[i] = true;
+                    if(guess.getValue(j) == correct.getValue(i) && !usedCorrect[i] && !usedGuess[j]){
+                        usedCorrect[i] = true;
+                        usedGuess[j] = true;
                         whitepins++;
                         
                     }
