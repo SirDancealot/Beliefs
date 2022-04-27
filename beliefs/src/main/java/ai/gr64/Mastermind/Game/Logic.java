@@ -69,7 +69,7 @@ public class Logic {
 
     // guess metode til at gætte, den returnerer hvor godt gættet var.(mm
     // possibility) giv dette til spillet. Denne gør så man kan komme med et gæt.
-    /*public static void makeGuess(String[] args) {
+    public static void makeGuess(String[] args) {
         System.out.println("have a guess!");
         System.out.println("guesses go from left to right");
         System.out.println("Type r for red");
@@ -82,7 +82,7 @@ public class Logic {
         Scanner scan = new Scanner(System.in);
         int colourGuessed = scan.nextInt();
 
-        MmPossibility guess = new MmPossibility(c1, c2, c3, c4);
+        //MmPossibility guess = new MmPossibility(c1, c2, c3, c4);
 
         for (int j = 0; j < 4; j++) {
            //colourGuessed = scan.nextLine().split(" ");
@@ -117,7 +117,7 @@ public class Logic {
                     break;
             }
         }
-    }*/
+    }
     public static void forceCorrect(MmPossibility _correct) {
         correct = _correct;
         
