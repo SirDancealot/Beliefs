@@ -14,35 +14,38 @@ public class MmPossibility{
     
     //set position and color
     public void setValue(int pos, Color color) {//lav dette som switchcase istedet
-        if (pos == 0){
-            c1 = color;
-        }
-        if (pos == 1){
-            c2 = color;
-        }
-        if (pos == 2){
-            c3 = color;
-        }
-        if (pos == 3){
-            c4 = color;
+        switch (pos){
+            case 0:
+                c1 = color;
+                break;
+            case 1:
+                c2 = color;
+                break;
+            case 2:
+                c3 = color;
+                break;
+            case 3:
+                c4 = color;
+                break;
+            
         }
     }
 
     //get color, for specific position
     public Color getValue(int pos){//lav dette til switchcase
-        if(pos == 0){
-            return c1;
+        switch (pos){
+            case 0:
+                return c1;
+            case 1:
+                return c2;
+            case 2:
+                return c3;
+            case 3:
+                return c4;
+            default:
+                throw new Error("Pos out of bound. Must be in range of 0-3");
         }
-        if(pos == 1){
-            return c2;
-        }
-        if(pos == 2){
-            return c3;
-        }
-        if(pos == 3){
-            return c4;
-        }
-        throw new Error("Pos out of bound. Must be in range of 0-3");
+    
     }
 
     @Override
