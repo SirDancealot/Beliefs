@@ -436,7 +436,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" text="Play">
+      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" onAction="#circleCreation" text="Play">
          <font>
             <Font size="30.0" />
          </font>
@@ -451,6 +451,7 @@
             <Font size="30.0" />
          </font>
       </Button>
+      <HBox fx:id="fuck" layoutX="402.0" layoutY="287.0" prefHeight="100.0" prefWidth="200.0" />
       
    </children>
 </Pane>

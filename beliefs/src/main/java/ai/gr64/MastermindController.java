@@ -2,13 +2,20 @@ package ai.gr64;
 
 import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.Game.Color;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 public class MastermindController {
     Color c1, c2, c3, c4, selectedColour;
     Circle[][] circleArray = new Circle[4][10];
+
+    Pane mastermindPane = new Pane();
+    HBox fuck = new HBox();
+    
 
 
     
@@ -44,14 +51,20 @@ public class MastermindController {
     @FXML
     private Circle guess4Row1, guess4Row2, guess4Row3, guess4Row4, guess4Row5, guess4Row6, guess4Row7, guess4Row8, guess4Row9, guess4Row10;
 
-    private void circleCreation() {
+    @FXML
+    public void circleCreation(ActionEvent event) {
 
         
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 4; j++) {
-                circleArray[i][j] = new Circle(30.f, Paint.valueOf("DARKRED"));
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < 1; j++) {
+                circleArray[i][j] = new Circle(417.f, 322.f, 30.f);
+                System.out.println(circleArray);
+                fuck.getChildren().add(circleArray[i][j]);
+                
             }
         }
+        System.out.println("circleCreation reached");
+        
         
     }
 
