@@ -1,4 +1,5 @@
 package ai.gr64.Mastermind.Game;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,14 +8,17 @@ import ai.gr64.Mastermind.MmPossibility;
 public class Logic {
     private static MmPossibility correct = null;
     private static MmPossibility[] guesses = new MmPossibility[10];
-    
-    //init metode til at starte spillet forfra. reset nyt spil.(ikke sikker på hvad metoden skal have i argument)
-    public static void init(String[] args) {
+    private static int guessesMade = 0;
+
+    // init metode til at starte spillet forfra. reset nyt spil.(ikke sikker på hvad
+    // metoden skal have i argument)
+    public static void init() {
+        guessesMade = 0;
         System.out.println("game has started!");
 
         guesses = new MmPossibility[10];
-        
-        //Generate what the answer will be
+
+        // Generate what the answer will be
         correct = new MmPossibility(Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK);
 
         Random r = new Random();
@@ -25,21 +29,44 @@ public class Logic {
 
     }
 
-    public static matchRate guess(MmPossibility guess) {//guess skal returnere hvor godt gættet var, ikke om det er korrekt eller forkert
+    public static void guess(MmPossibility guess) {// guess skal returnere hvor godt gættet var, ikke om det er korrekt eller forkert
+        
         // compare guess and correct, return how many colors are correct position, or just the right color (red and white pegs)
+        guesses[guessesMade] = guess;
+        guessesMade++;
+        int redpins = 0;
+        int whitepins = 0;
 
-        //evt brug equals metode på Mmpossibility
-        //anden mulighed, sammenlign manuelt hver farve og possition i guess med correct.
+        if (guess == correct) {
+            redpins = 4;
+            // return type; skal return 4 røde pins. kordiner med Steph, hvilken return type det skulle være.
+        }else if(guess != correct){
+            
+            boolean[] used = new boolean[] {false, false, false, false};
 
-        /*for(i = 0; i < 10; i++){
-            if(MmPossibility[i] == colourSegmant[]){
-                return guess;
+            for(int i = 0; i < 4; i++){
+                if(guess.getValue(i) == correct.getValue(i)){
+                    redpins++;
+                    used[i] = true;
+                    continue;
+                }
             }
-        }*/
+            for(int i = 0; i < 4; i++){
+                for(int j = 0; j < 4; j++){
+                    if(guess.getValue(j) == correct.getValue(i) && !used[i]){
+                        used[i] = true;
+                        whitepins++;
+                        
+                    }
+                }   
+            }
+        }
+        System.out.println("hvid: " + whitepins + " rød: " + redpins);
     }
 
-    //guess metode til at gætte, den returnerer hvor godt gættet var.(mm possibility) giv dette til spillet. Denne gør så man kan komme med et gæt.
-    public static void makeGuess(String[] args) {
+    // guess metode til at gætte, den returnerer hvor godt gættet var.(mm
+    // possibility) giv dette til spillet. Denne gør så man kan komme med et gæt.
+    /*public static void makeGuess(String[] args) {
         System.out.println("have a guess!");
         System.out.println("guesses go from left to right");
         System.out.println("Type r for red");
@@ -54,9 +81,8 @@ public class Logic {
 
         MmPossibility guess = new MmPossibility(c1, c2, c3, c4);
 
-        for (int j = 0; j < 4; j++){
-            colourGuessed = scan.nextLine().split(" ");
-            
+        for (int j = 0; j < 4; j++) {
+           //colourGuessed = scan.nextLine().split(" ");
 
             switch (colourGuessed) {
                 case 'r':
@@ -88,16 +114,11 @@ public class Logic {
                     break;
             }
         }
-
-        /*if(row_x[] == actualResult[]){
-            System.out.println("you win");
-            return win
-        } else {
-            System.out.println("you lose!");
-            return loss
-        }*/
-
+    }*/
+    public static void forceCorrect(MmPossibility _correct) {
+        correct = _correct;
+        
     }
-    //gør alt static(betyder man ikke skal oprette instanser af en klasse.)
+    // gør alt static(betyder man ikke skal oprette instanser af en klasse.)
 
 }

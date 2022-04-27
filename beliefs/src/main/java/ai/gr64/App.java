@@ -1,5 +1,9 @@
 package ai.gr64;
 
+import ai.gr64.Mastermind.MmPossibility;
+import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.Mastermind.Game.Logic;
+
 /**
  * JavaFX App
  */
@@ -25,7 +29,9 @@ public class App {
 
     public static void main(String[] args) {
         // launch();
-
+        Logic.init();
+        Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.BLACK, Color.GREEN));
+        Logic.guess(new MmPossibility(Color.MAGENTA, Color.GREEN, Color.BLACK, Color.CYAN));
         
     }
 

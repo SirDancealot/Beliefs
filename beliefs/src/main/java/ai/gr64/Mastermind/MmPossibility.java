@@ -12,7 +12,7 @@ public class MmPossibility{
         this.c4 = c4;
     }
     
-    //set value nr. x
+    //set position and color
     public void setValue(int pos, Color color) {//lav dette som switchcase istedet
         if (pos == 0){
             c1 = color;
@@ -28,7 +28,7 @@ public class MmPossibility{
         }
     }
 
-    //get value nr. x
+    //get color, for specific position
     public Color getValue(int pos){//lav dette til switchcase
         if(pos == 0){
             return c1;
