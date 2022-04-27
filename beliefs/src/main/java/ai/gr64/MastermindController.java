@@ -8,7 +8,7 @@ import javafx.scene.shape.Circle;
 
 public class MastermindController {
     Color c1, c2, c3, c4, selectedColour;
-    int[][] circleArray = new int[4][10];
+    Circle[][] circleArray = new Circle[4][10];
 
 
     
@@ -45,12 +45,12 @@ public class MastermindController {
     private Circle guess4Row1, guess4Row2, guess4Row3, guess4Row4, guess4Row5, guess4Row6, guess4Row7, guess4Row8, guess4Row9, guess4Row10;
 
     private void circleCreation() {
-        for (int i = 0; i < 4; i++) {
-            
-            for (int j = 0; j < 10; j++) {
-                
+
+        
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 4; j++) {
+                circleArray[i][j] = new Circle(30.f, Paint.valueOf("DARKRED"));
             }
-            
         }
         
     }
