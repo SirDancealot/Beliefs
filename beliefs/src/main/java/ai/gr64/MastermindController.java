@@ -4,7 +4,6 @@ import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.Game.Color;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -104,6 +103,12 @@ public class MastermindController {
                 
             }
         }
+        
+    }
+
+    @FXML
+    public void Guess(ActionEvent event) {
+        
         
     }
 
