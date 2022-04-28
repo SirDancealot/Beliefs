@@ -1,14 +1,21 @@
 package ai.gr64;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.function.IntFunction;
+
 import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.Mastermind.Game.Logic;
+import ai.gr64.Mastermind.Game.MatchRate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
-public class MastermindController {
+public class MastermindController implements Initializable {
     Color c1, c2, c3, c4, selectedColour;
     Circle[][] circleArray = new Circle[10][4];
 
@@ -21,46 +28,51 @@ public class MastermindController {
     //Colour circles
     @FXML
     private Circle circleRed, circleBlack, circleGreen, circleOrange, circleMagenta, circleCyan;
-
-    //Indicator cicles
-    //Indicator 1
-    @FXML
-    private Circle indicator1Row1, indicator1Row2, indicator1Row3, indicator1Row4, indicator1Row5, indicator1Row6, indicator1Row7, indicator1Row8, indicator1Row9, indicator1Row10;
-    //Indicator 2
-    @FXML
-    private Circle indicator2Row1, indicator2Row2, indicator2Row3, indicator2Row4, indicator2Row5, indicator2Row6, indicator2Row7, indicator2Row8, indicator2Row9, indicator2Row10;
-    //Indicator 3
-    @FXML
-    private Circle indicator3Row1, indicator3Row2, indicator3Row3, indicator3Row4, indicator3Row5, indicator3Row6, indicator3Row7, indicator3Row8, indicator3Row9, indicator3Row10;
-    //Indicator 4
-    @FXML
-    private Circle indicator4Row1, indicator4Row2, indicator4Row3, indicator4Row4, indicator4Row5, indicator4Row6, indicator4Row7, indicator4Row8, indicator4Row9, indicator4Row10;
     
-    //Guess circles
-    //Guess 1
-    @FXML
-    private Circle guess1Row1, guess1Row2, guess1Row3, guess1Row4, guess1Row5, guess1Row6, guess1Row7, guess1Row8, guess1Row9, guess1Row10;
-    //Guess 2
-    @FXML
-    private Circle guess2Row1, guess2Row2, guess2Row3, guess2Row4, guess2Row5, guess2Row6, guess2Row7, guess2Row8, guess2Row9, guess2Row10;
-    //Guess 3
-    @FXML
-    private Circle guess3Row1, guess3Row2, guess3Row3, guess3Row4, guess3Row5, guess3Row6, guess3Row7, guess3Row8, guess3Row9, guess3Row10;
-    //Guess 4
-    @FXML
-    private Circle guess4Row1, guess4Row2, guess4Row3, guess4Row4, guess4Row5, guess4Row6, guess4Row7, guess4Row8, guess4Row9, guess4Row10;
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        guessCircles();
+        indicatorCircles();
+        
+    }
+    
 
-    @FXML
-    public void guessCircles(ActionEvent event) {
+    public void guessCircles() {
         float xCoordinate = 893.0f;
         float yCoordinate = 823.0f;
 
         
         for (int y = 0; y < 10; y++) {
             for (int x = 0; x < 4; x++) {
-            
+                final int _y = y;
+                final int _x = x;
                 circleArray[y][x] = new Circle(xCoordinate + x*80, yCoordinate - y*81, 30.f);
                 mastermindPane.getChildren().add(circleArray[y][x]);
+                circleArray[y][x].setOnMouseClicked((e) ->{
+                    if (_y!=Logic.getGuessesMade()) return;
+                    switch (_x) {
+                        case 0:
+                            c1 = selectedColour;
+                            break;
+                        
+                        case 1:
+                            c2 = selectedColour;
+                            break;
+    
+                        case 2:
+                            c3 = selectedColour;
+                            break;
+    
+                        case 3:
+                            c4 = selectedColour;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    ((Circle)e.getSource()).setFill(Paint.valueOf(Color.getColor(selectedColour)));
+                    
+                });
             
                 
             }
@@ -68,8 +80,9 @@ public class MastermindController {
         
     }
 
-    @FXML
-    public void indicatorCircles(ActionEvent event) {
+    
+
+    public void indicatorCircles() {
         float xCoordinate = 1208.0f;
         float yCoordinate = 808.0f;
 
@@ -107,7 +120,16 @@ public class MastermindController {
     }
 
     @FXML
-    public void Guess(ActionEvent event) {
+    public void guess(ActionEvent event) {
+        MmPossibility guess = new MmPossibility(c1, c2, c3, c4);
+        MatchRate match = Logic.guess(guess);
+        
+        
+    }
+
+    @FXML
+    public void playGame(ActionEvent event) {
+        Logic.init();
         
         
     }
@@ -115,12 +137,6 @@ public class MastermindController {
     @FXML
     public void redButton() {
         selectedColour = Color.RED;
-    }
-
-    @FXML
-    public Circle getGuess1Row1() {
-        guess1Row1.setFill(Paint.valueOf(Color.getColor(selectedColour)));
-        return guess1Row1;
     }
 
     @FXML
@@ -147,21 +163,7 @@ public class MastermindController {
     public void cyanButton() {
         selectedColour = Color.CYAN;
     }
-
-    MmPossibility colours = new MmPossibility(c1, c2, c3, c4);
-
-    @FXML
-    public MmPossibility guessButton(){
-        
-
-
-        return colours;
-
-
-
-    }
-
-    
+   
 
 }
     

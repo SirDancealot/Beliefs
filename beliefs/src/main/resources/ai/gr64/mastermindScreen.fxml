@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
@@ -25,359 +24,59 @@
       <VBox alignment="TOP_CENTER" layoutX="783.0" layoutY="54.0" prefHeight="938.0" prefWidth="480.0">
          <children>
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row10" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row10" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row10" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row10" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding></HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row9" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row9" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row9" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row9" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row8" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row8" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row8" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row8" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row7" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row7" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row7" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row7" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row6" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row6" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row6" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row6" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row5" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row5" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row5" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row5" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row4" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row4" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row4" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row4" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row3" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row3" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row3" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row3" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row2" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row2" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row2" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row2" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
             </HBox>
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0">
-               <children>
-                  <Circle fx:id="guess1Row1" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="guess2Row1" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess3Row1" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Circle fx:id="guess4Row1" fill="#808080" radius="30.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" right="30.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <TilePane hgap="3.0" prefHeight="80.0" prefWidth="80.0" vgap="3.0">
-                     <children>
-                        <Circle fx:id="indicator1Row1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE">
-                           <TilePane.margin>
-                              <Insets />
-                           </TilePane.margin>
-                        </Circle>
-                        <Circle fx:id="indicator2Row1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator3Row1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="indicator4Row1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-                     </children>
-                  </TilePane>
-               </children>
                <padding>
                   <Insets left="80.0" top="10.0" />
                </padding>
@@ -385,12 +84,12 @@
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Circle fx:id="circleRed" fill="DARKRED" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleBlack" fill="BLACK" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleGreen" fill="LAWNGREEN" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleOrange" fill="ORANGERED" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleMagenta" fill="DEEPPINK" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleCyan" fill="CYAN" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleRed" fill="DARKRED" onMouseClicked="#redButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleBlack" fill="BLACK" onMouseClicked="#blackButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleGreen" fill="LAWNGREEN" onMouseClicked="#greenButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleOrange" fill="ORANGERED" onMouseClicked="#orangeButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleMagenta" fill="DEEPPINK" onMouseClicked="#magentaButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleCyan" fill="CYAN" onMouseClicked="#cyanButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
                <padding>
                   <Insets left="10.0" top="50.0" />
@@ -436,7 +135,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" onAction="#indicatorCircles" text="Play">
+      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" onAction="#playGame" text="Play">
          <font>
             <Font size="30.0" />
          </font>
@@ -446,7 +145,7 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="guessButton" layoutX="295.0" layoutY="395.0" mnemonicParsing="false" text="Guess">
+      <Button fx:id="guessButton" layoutX="295.0" layoutY="395.0" mnemonicParsing="false" onAction="#guess" text="Guess">
          <font>
             <Font size="30.0" />
          </font>
