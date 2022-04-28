@@ -436,7 +436,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" onAction="#circleCreation" text="Play">
+      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" onAction="#indicatorCircles" text="Play">
          <font>
             <Font size="30.0" />
          </font>

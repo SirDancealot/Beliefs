@@ -11,10 +11,10 @@ import javafx.scene.shape.Circle;
 
 public class MastermindController {
     Color c1, c2, c3, c4, selectedColour;
-    Circle[][] circleArray = new Circle[4][10];
+    Circle[][] circleArray = new Circle[10][4];
 
-    Pane mastermindPane = new Pane();
-    HBox fuck = new HBox();
+    @FXML
+    Pane mastermindPane;
     
 
 
@@ -52,19 +52,58 @@ public class MastermindController {
     private Circle guess4Row1, guess4Row2, guess4Row3, guess4Row4, guess4Row5, guess4Row6, guess4Row7, guess4Row8, guess4Row9, guess4Row10;
 
     @FXML
-    public void circleCreation(ActionEvent event) {
+    public void guessCircles(ActionEvent event) {
+        float xCoordinate = 893.0f;
+        float yCoordinate = 823.0f;
 
         
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 1; j++) {
-                circleArray[i][j] = new Circle(417.f, 322.f, 30.f);
-                System.out.println(circleArray);
-                fuck.getChildren().add(circleArray[i][j]);
+        for (int y = 0; y < 10; y++) {
+            for (int x = 0; x < 4; x++) {
+            
+                circleArray[y][x] = new Circle(xCoordinate + x*80, yCoordinate - y*81, 30.f);
+                mastermindPane.getChildren().add(circleArray[y][x]);
+            
                 
             }
         }
-        System.out.println("circleCreation reached");
         
+    }
+
+    @FXML
+    public void indicatorCircles(ActionEvent event) {
+        float xCoordinate = 1208.0f;
+        float yCoordinate = 808.0f;
+
+        
+        for (int y = 0; y < 10; y++) {
+            for (int x = 0; x < 4; x++) {
+            
+                
+                switch (x) {
+                    case 0:
+                        circleArray[y][x] = new Circle(xCoordinate, yCoordinate - y*81, 15.f);
+                        break;
+                    
+                    case 1:
+                        circleArray[y][x] = new Circle(xCoordinate + 33, yCoordinate - y*81, 15.f);
+                        break;
+
+                    case 2:
+                        circleArray[y][x] = new Circle(xCoordinate, yCoordinate - y*81 + 33, 15.f);
+                        break;
+
+                    case 3:
+                        circleArray[y][x] = new Circle(xCoordinate + 33, yCoordinate - y*81 + 33, 15.f);
+                        break;
+                    
+                    default:
+                        break;
+                }
+                mastermindPane.getChildren().add(circleArray[y][x]);
+            
+                
+            }
+        }
         
     }
 
