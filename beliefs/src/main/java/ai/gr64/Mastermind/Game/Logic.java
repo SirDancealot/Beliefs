@@ -18,14 +18,13 @@ public class Logic {
         guesses = new MmPossibility[10];
 
         //Generate what the answer will be
-        correct = new MmPossibility(Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK);
+        correct = new MmPossibility(Color.UNUSED, Color.UNUSED, Color.UNUSED, Color.UNUSED);
 
         Random r = new Random();
         for (int i = 0; i < 4; i++) {
             int color = r.nextInt(6);
             correct.setValue(i, Color.fromValue(color));
         }
-
     }
 
     //this method returns how good a guess the ism and also if the guess is correct

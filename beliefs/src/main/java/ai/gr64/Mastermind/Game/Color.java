@@ -7,7 +7,8 @@ public enum Color {
     GREEN(2),
     YELLOW(3),
     MAGENTA(4),
-    CYAN(5);
+    CYAN(5),
+    UNUSED(-1);
 
     public final int value;
     private Color(int value) {
