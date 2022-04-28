@@ -76,4 +76,8 @@ public class Logic {
         correct = _correct;
         
     }
+
+    public static int getGuessesMade() {
+        return guessesMade;
+    }
 }
