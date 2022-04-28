@@ -20,7 +20,7 @@
             <Font size="48.0" />
          </font>
       </Text>
-      <Rectangle fx:id="BackgroundMmBoard" arcHeight="5.0" arcWidth="5.0" fill="#b5b5b5" height="936.0" layoutX="784.0" layoutY="56.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
+      <Rectangle fx:id="BackgroundMmBoard" arcHeight="5.0" arcWidth="5.0" fill="DIMGRAY" height="936.0" layoutX="784.0" layoutY="56.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
       <VBox alignment="TOP_CENTER" layoutX="783.0" layoutY="54.0" prefHeight="938.0" prefWidth="480.0">
          <children>
             <HBox prefHeight="80.0" prefWidth="200.0">
@@ -105,7 +105,7 @@
          <children>
             <HBox>
                <children>
-                  <Circle fx:id="colourExampleCorrColAndPoss" fill="#fc0000" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="colourExampleCorrColAndPoss" fill="RED" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text fx:id="textCorrectColAndPoss" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct colour + position">
                      <font>
                         <Font size="18.0" />
@@ -125,7 +125,7 @@
             </HBox>
             <HBox prefWidth="200.0">
                <children>
-                  <Circle fx:id="colourExampleWrong" fill="#2197ff" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="colourExampleWrong" fill="SILVER" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
                   <Text fx:id="textWrongColour" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong colour">
                      <font>
                         <Font size="18.0" />
@@ -135,11 +135,6 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="playButton" layoutX="308.0" layoutY="304.0" mnemonicParsing="false" onAction="#playGame" text="Play">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
       <Button fx:id="exitButton" layoutX="308.0" layoutY="710.0" mnemonicParsing="false" text="Exit">
          <font>
             <Font size="30.0" />
@@ -150,7 +145,6 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <HBox fx:id="fuck" layoutX="402.0" layoutY="287.0" prefHeight="100.0" prefWidth="200.0" />
       
    </children>
 </Pane>
