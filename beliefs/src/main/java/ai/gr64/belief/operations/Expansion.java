@@ -11,8 +11,7 @@ public class Expansion implements IOpp {
 
     @Override
     public Possibilities evaluate() {
-        // TODO Auto-generated method stub
-        return null;
+        return opp1.evaluate().outerJoin(opp2.evaluate());
     }
   
     @Override

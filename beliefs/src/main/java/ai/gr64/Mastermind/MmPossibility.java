@@ -2,7 +2,7 @@ package ai.gr64.Mastermind;
 
 import ai.gr64.Mastermind.Game.Color;
 
-public class MmPossibility{
+public class MmPossibility implements Comparable {
     Color c1, c2, c3, c4;
 
     public MmPossibility(Color c1, Color c2, Color c3, Color c4) {
@@ -58,5 +58,20 @@ public class MmPossibility{
                  c2 != other.getValue(1) || 
                  c3 != other.getValue(2) || 
                  c4 != other.getValue(3));
+    }
+    
+    @Override
+    public int compareTo(Object o) {
+        // TODO Auto-generated method stub
+        MmPossibility other = o instanceof MmPossibility ? (MmPossibility)o : null;
+        if (other == null){
+            throw new Error("Cannot compare MmPossibility to something else");
+        }
+        return hashCode() - other.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return c1.value * 1000 + c2.value * 100 + c3.value * 10 + c4.value;
     }
 }
