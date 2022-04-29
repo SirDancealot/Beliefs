@@ -3,6 +3,9 @@ package ai.gr64;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.belief.interfaces.IOpp;
+import ai.gr64.belief.operations.Unit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,6 +49,8 @@ public class InputPopUpController implements Initializable{
     
     boolean[][] colorsArray = new boolean[4][6];
 
+    
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         colorsArray = new boolean[4][6];
@@ -58,21 +63,17 @@ public class InputPopUpController implements Initializable{
 
     @FXML
     public void okButton(ActionEvent event) {
-        boolean legal = true;
+        int[] row = new int[4];
         for (int x = 0; x < 4; x++) {
-            boolean rowLegal = false;
+            
             for (int y = 0; y < 6; y++) {
                 if (colorsArray[x][y]) {
-                    rowLegal = true;
-                    break;
+                    row[x]++;
                 }
             }
-            if (!rowLegal) {
-                legal = false;
-                break;
-            }
+            
         }
-        if (!legal) {
+        if (row[0] * row[1] * row[2] * row[3] == 0) {
             Alert a = new Alert(AlertType.INFORMATION);
             // set content text
             a.setContentText("Must select a colour for each position.");
@@ -81,7 +82,20 @@ public class InputPopUpController implements Initializable{
             a.show();
             return;
         }
+        
+        Color[][] colors = new Color[4][];
+        for (int i = 0; i < 4; i++) {
+            colors[i] = new Color[row[i]];
+            int colorsCollumn = 0;
+            for (int j = 0; j < 6; j++) {
+                if (colorsArray[i][j]) {
+                    colors[i][colorsCollumn] = Color.fromValue(j);
+                    colorsCollumn++;
+                }
+            }
+        }
 
+        Unit unit = new Unit(colors[0], colors[1], colors[2], colors[3]);
         
     }
 

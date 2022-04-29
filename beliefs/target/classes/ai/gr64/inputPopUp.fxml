@@ -37,11 +37,11 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Text layoutX="30.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="29.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="29.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="29.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="29.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="29.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="30.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Red" />
+      <Text layoutX="29.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Black" />
+      <Text layoutX="29.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Magenta" />
+      <Text layoutX="29.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Green" />
+      <Text layoutX="29.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orange" />
+      <Text layoutX="29.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cyan" />
    </children>
 </Pane>
