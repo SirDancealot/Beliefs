@@ -17,8 +17,29 @@ public class MmPossibilities implements Possibilities {
     }
 
     @Override
-    public Possibilities overlap(Possibilities other) {
-        // TODO Auto-generated method stub
+    public Possibilities innerJoin(Possibilities other) {
+        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities)other : null;
+        if (o == null) {
+            throw new Error("Cannot compare two different types of possibilities");
+        }
+        return null;
+    }
+
+    @Override
+    public Possibilities outerJoin(Possibilities other) {
+        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities)other : null;
+        if (o == null) {
+            throw new Error("Cannot compare two different types of possibilities");
+        }
+        return null;
+    }
+
+    @Override
+    public Possibilities exclusive(Possibilities other) {
+        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities)other : null;
+        if (o == null) {
+            throw new Error("Cannot compare two different types of possibilities");
+        }
         return null;
     }
 
