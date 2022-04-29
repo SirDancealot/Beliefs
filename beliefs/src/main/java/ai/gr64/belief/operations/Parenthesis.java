@@ -6,13 +6,11 @@ import ai.gr64.belief.interfaces.IOpp;
 public class Parenthesis implements IOpp {
 
     private IOpp opp1 = null;
-    private IOpp opp2 = null;
     private boolean full = false;
 
     @Override
     public Possibilities evaluate() {
-        // TODO Auto-generated method stub
-        return null;
+        return opp1.evaluate();
     } 
 
     @Override
@@ -29,15 +27,6 @@ public class Parenthesis implements IOpp {
             opp1.addOpp(opp);
             return;
         }
-
-        if (opp2 == null) {
-            opp2 = opp;
-            return;
-        }
-
-        if (!opp2.isFull()) {
-            opp2.addOpp(opp);
-        }
     }
 
     @Override
@@ -45,13 +34,10 @@ public class Parenthesis implements IOpp {
         if (full)
             return true;
 
-        if (opp1 == null || opp2 == null)
+        if (opp1 == null)
             return false;
 
         if (!opp1.isFull())
-            return false;
-
-        if (!opp2.isFull())
             return false;
         
         full = true;
