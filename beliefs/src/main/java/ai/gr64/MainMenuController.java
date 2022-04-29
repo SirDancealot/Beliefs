@@ -20,6 +20,7 @@ import ai.gr64.belief.operations.Union;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 public class MainMenuController {
@@ -30,6 +31,7 @@ public class MainMenuController {
     private Button notSubsetButton, preferenceOrderingButton, contractionButton, revisionButton, expansionButton, parenthesisButton;
     @FXML
     private TextField baseTextField, possibilityTextField, qubeTextField, iTextField;
+
 
     private static IOpp i ,k, p, q;
     
