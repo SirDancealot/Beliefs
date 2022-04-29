@@ -8,72 +8,32 @@
 
 <Pane fx:id="mainPane" maxHeight="1024.0" maxWidth="1920.0" minHeight="1024.0" minWidth="1920.0" prefHeight="1024.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ai.gr64.MainMenuController">
    <children>
-      <Button fx:id="notButton" layoutX="145.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleNot" prefHeight="70.0" prefWidth="70.0" text="¬">
+      <Button fx:id="notButton" layoutX="595.0" layoutY="774.0" mnemonicParsing="false" onAction="#handleNot" prefHeight="70.0" prefWidth="70.0" text="¬">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="andButton" layoutX="285.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleAnd" prefHeight="70.0" prefWidth="70.0" text="&amp;">
+      <Button fx:id="andButton" layoutX="735.0" layoutY="774.0" mnemonicParsing="false" onAction="#handleAnd" prefHeight="70.0" prefWidth="70.0" text="∧">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="orButton" layoutX="425.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleOr" prefHeight="70.0" prefWidth="70.0" text="∧">
+      <Button fx:id="orButton" layoutX="875.0" layoutY="774.0" mnemonicParsing="false" onAction="#handleOr" prefHeight="70.0" prefWidth="70.0" text="∨">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="elementsInSetButton" layoutX="565.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleElementsInSet" prefHeight="70.0" prefWidth="70.0" text="∈">
+      <Button fx:id="unitButton" layoutX="665.0" layoutY="903.0" mnemonicParsing="false" onAction="#handleUnit" prefHeight="70.0" prefWidth="70.0" text="U">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="notElementButton" layoutX="705.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleNotElement" prefHeight="70.0" prefWidth="70.0" text="∉">
+      <Button fx:id="parenthesisButton" layoutX="805.0" layoutY="903.0" mnemonicParsing="false" onAction="#handleParenthesis" prefHeight="70.0" prefWidth="70.0" text="( )">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="intersectionButton" layoutX="845.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleIntersection" prefHeight="70.0" prefWidth="70.0" text="∩">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="unionButton" layoutX="985.0" layoutY="771.0" mnemonicParsing="false" onAction="#handleUnion" prefHeight="70.0" prefWidth="70.0" text="O">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="subsetEqualButton" layoutX="215.0" layoutY="891.0" mnemonicParsing="false" onAction="#handleSubSetEqual" prefHeight="70.0" prefWidth="70.0" text="⊆">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="notSubsetButton" layoutX="355.0" layoutY="891.0" mnemonicParsing="false" onAction="#handleNotSubSet" prefHeight="70.0" prefWidth="70.0" text="⊈">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="preferenceOrderingButton" layoutX="495.0" layoutY="891.0" mnemonicParsing="false" onAction="#handlePreferenceOrdering" prefHeight="70.0" prefWidth="70.0" text="≤">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="contractionButton" layoutX="635.0" layoutY="891.0" mnemonicParsing="false" onAction="#handleContraction" prefHeight="70.0" prefWidth="70.0" text="−">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="revisionButton" layoutX="775.0" layoutY="891.0" mnemonicParsing="false" onAction="#handleRevision" prefHeight="70.0" prefWidth="70.0" text="∗">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="expansionButton" layoutX="915.0" layoutY="891.0" mnemonicParsing="false" onAction="#handleExpansion" prefHeight="70.0" prefWidth="70.0" text="+">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="parenthesisButton" layoutX="1055.0" layoutY="891.0" mnemonicParsing="false" onAction="#handleParenthesis" prefHeight="70.0" prefWidth="70.0" text="( )">
+      <Button fx:id="revisionButton" layoutX="1259.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleRevision" text="Revise belief set">
          <font>
             <Font size="30.0" />
          </font>

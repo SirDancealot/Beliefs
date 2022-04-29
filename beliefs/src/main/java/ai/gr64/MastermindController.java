@@ -33,7 +33,17 @@ public class MastermindController implements Initializable {
 
     // Colour circles
     @FXML
-    private Circle circleRed, circleBlack, circleGreen, circleOrange, circleMagenta, circleCyan;
+    private Circle circleRed;
+    @FXML
+    private Circle circleBlack;
+    @FXML
+    private Circle circleGreen;
+    @FXML
+    private Circle circleOrange;
+    @FXML
+    private Circle circleMagenta;
+    @FXML
+    private Circle circleCyan;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
