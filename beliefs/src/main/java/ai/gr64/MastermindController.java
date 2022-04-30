@@ -49,7 +49,8 @@ public class MastermindController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
         guessCircles();
         indicatorCircles();
-        Logic.init();
+        if (!Logic.isGameInProgress())
+            Logic.init();
         //Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
 
     }

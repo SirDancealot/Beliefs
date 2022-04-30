@@ -5,12 +5,14 @@ import java.util.Random;
 import ai.gr64.Mastermind.MmPossibility;
 
 public class Logic {
+    private static boolean gameInProgress = false;
     private static MmPossibility correct = null;
     private static MmPossibility[] guesses = new MmPossibility[10];
     private static int guessesMade = 0;
 
     // init method to start the game from the beginning.
     public static void init() {
+        gameInProgress = true;
         guessesMade = 0;
         System.out.println("game has started!");
 
@@ -26,6 +28,7 @@ public class Logic {
         }
     }
 
+
     //this method returns how good a guess the ism and also if the guess is correct
     //compare guess and correct, return how many colors are correct position, or just the right color (red and white pegs)
     public static MatchRate guess(MmPossibility guess) {
@@ -36,6 +39,7 @@ public class Logic {
 
         if (guess == correct) {
             redpins = 4;
+            gameInProgress = false;
         }else if(guess != correct){
             
             boolean[] usedCorrect = new boolean[] {false, false, false, false};
@@ -77,5 +81,9 @@ public class Logic {
 
     public static int getGuessesMade() {
         return guessesMade;
+    }
+
+    public static boolean isGameInProgress() {
+        return gameInProgress;
     }
 }
