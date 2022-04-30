@@ -84,12 +84,12 @@
             <Line endX="480.0" />
             <HBox prefHeight="80.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Circle fx:id="circleRed" fill="DARKRED" onMouseClicked="#redButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleBlack" fill="BLACK" onMouseClicked="#blackButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleGreen" fill="LAWNGREEN" onMouseClicked="#greenButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleOrange" fill="ORANGERED" onMouseClicked="#orangeButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleMagenta" fill="DEEPPINK" onMouseClicked="#magentaButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fx:id="circleCyan" fill="CYAN" onMouseClicked="#cyanButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="circleRed" fill="DARKRED" onMouseClicked="#redButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                  <Circle fx:id="circleBlack" fill="BLACK" onMouseClicked="#blackButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                  <Circle fx:id="circleGreen" fill="LAWNGREEN" onMouseClicked="#greenButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                  <Circle fx:id="circleOrange" fill="ORANGERED" onMouseClicked="#orangeButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                  <Circle fx:id="circleMagenta" fill="DEEPPINK" onMouseClicked="#magentaButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
+                  <Circle fx:id="circleCyan" fill="CYAN" onMouseClicked="#cyanButton" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" />
                </children>
                <padding>
                   <Insets left="10.0" top="50.0" />

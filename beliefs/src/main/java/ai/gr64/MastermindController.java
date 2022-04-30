@@ -201,6 +201,7 @@ public class MastermindController implements Initializable {
         c3 = Color.UNUSED;
         c4 = Color.UNUSED;
         selectedColour = Color.UNUSED;
+        clearAllStrokes();
     }
 
     public void updateIndicators(MatchRate match) {
@@ -254,31 +255,52 @@ public class MastermindController implements Initializable {
     @FXML
     public void redButton() {
         selectedColour = Color.RED;
+        clearAllStrokes();
+        circleRed.setStroke(Paint.valueOf("WHITE"));
     }
 
     @FXML
     public void blackButton() {
         selectedColour = Color.BLACK;
+        clearAllStrokes();
+        circleBlack.setStroke(Paint.valueOf("WHITE"));
     }
 
     @FXML
     public void greenButton() {
         selectedColour = Color.GREEN;
+        clearAllStrokes();
+        circleGreen.setStroke(Paint.valueOf("WHITE"));
     }
 
     @FXML
     public void orangeButton() {
         selectedColour = Color.ORANGE;
+        clearAllStrokes();
+        circleOrange.setStroke(Paint.valueOf("WHITE"));
     }
 
     @FXML
     public void magentaButton() {
         selectedColour = Color.MAGENTA;
+        clearAllStrokes();
+        circleMagenta.setStroke(Paint.valueOf("WHITE"));
     }
 
     @FXML
     public void cyanButton() {
         selectedColour = Color.CYAN;
+        clearAllStrokes();
+        circleCyan.setStroke(Paint.valueOf("WHITE"));
+    }
+
+    private void clearAllStrokes() {
+        circleBlack.setStroke(Paint.valueOf("BLACK"));
+        circleRed.setStroke(Paint.valueOf("BLACK"));
+        circleCyan.setStroke(Paint.valueOf("BLACK"));
+        circleGreen.setStroke(Paint.valueOf("BLACK"));
+        circleMagenta.setStroke(Paint.valueOf("BLACK"));
+        circleOrange.setStroke(Paint.valueOf("BLACK"));
     }
 
     @FXML
