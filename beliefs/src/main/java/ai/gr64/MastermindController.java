@@ -20,6 +20,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 public class MastermindController implements Initializable {
     Color c1 = Color.UNUSED;
@@ -248,6 +249,7 @@ public class MastermindController implements Initializable {
 
     @FXML
     public void returnToBeliefEngine() throws IOException {
+        ((Stage)returnToBeliefEngine.getScene().getWindow()).setTitle("Belief Engine");
         App.setRoot("main");
 
     }

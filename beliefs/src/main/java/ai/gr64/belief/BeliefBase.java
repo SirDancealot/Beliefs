@@ -9,7 +9,11 @@ public class BeliefBase {
         base = MmPossibilities.AllPossibilities;
     }
 
+    public MmPossibilities getPossibilities() {
+        return (MmPossibilities)base;
+    }
+
     public void Revise(Possibilities possibilities) {
-        base.innerJoin(possibilities);
+        base = base.innerJoin(possibilities);
     }
 }

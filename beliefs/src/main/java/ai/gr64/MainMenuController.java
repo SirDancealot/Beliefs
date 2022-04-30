@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import ai.gr64.Mastermind.MmPossibilities;
 import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.belief.BeliefBase;
 import ai.gr64.belief.interfaces.IOpp;
 import ai.gr64.belief.operations.And;
 import ai.gr64.belief.operations.Not;
@@ -22,7 +23,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.IndexRange;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -46,12 +46,13 @@ public class MainMenuController implements Initializable {
 
     private ObservableList<MmPossibility> possibilitiesOl;
 
+    private static BeliefBase base = new BeliefBase();
+
     private static IOpp k = new Parenthesis();
 
     public MainMenuController() {
         possibilitiesOl = FXCollections.observableArrayList();
-        MmPossibilities pos1 = new MmPossibilities(new Color[]{ Color.RED, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.ORANGE }, new Color[]{ Color.BLACK }, new Color[]{ Color.BLACK }, new Color[]{ Color.RED });
-        possibilitiesOl.addAll(pos1.getSet());
+        possibilitiesOl.addAll(base.getPossibilities().getSet());
     }
 
     @Override
@@ -152,11 +153,17 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private void switchToMastermind() throws IOException {
+        ((Stage)notButton.getScene().getWindow()).setTitle("Mastermind");
         App.setRoot("mastermindScreen");
     }
 
     @FXML
     public void handleRevision(ActionEvent event) {
-
+        if (!k.isFull())
+            return;
+        base.Revise(k.evaluate());
+        possibilitiesOl.setAll(base.getPossibilities().getSet());
+        k = new Parenthesis();
+        baseTextField.setText("⬚");
     }
 }
