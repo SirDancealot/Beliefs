@@ -7,9 +7,11 @@ import ai.gr64.belief.operations.And;
 import ai.gr64.belief.operations.Not;
 import ai.gr64.belief.operations.Or;
 import ai.gr64.belief.operations.Parenthesis;
+import ai.gr64.belief.operations.Unit;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -63,7 +65,13 @@ public class MainMenuController {
     public void handleUnit(ActionEvent event) {
         Stage stage = (Stage) (((Button) event.getSource()).getScene().getWindow());
         try {
-            Scene secondScene = new Scene(App.loadFXML("inputPopUp"), 600, 400);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("inputPopUp.fxml"));
+            Parent root = loader.load();
+
+            InputPopUpController controller = loader.getController();
+            controller.setOwner(this);
+
+            Scene secondScene = new Scene(root, 600, 400);
             // New window (Stage)
             Stage newWindow = new Stage();
             newWindow.setTitle("Second Stage");
@@ -80,10 +88,14 @@ public class MainMenuController {
             newWindow.setY(stage.getY() + 100);
 
             newWindow.show();
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public void unitAdded(Unit unit) {
+        System.out.println(unit);
     }
 
     @FXML
