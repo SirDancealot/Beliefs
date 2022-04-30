@@ -130,7 +130,7 @@ public class MainMenuController implements Initializable {
             Scene secondScene = new Scene(root, 600, 400);
             // New window (Stage)
             Stage newWindow = new Stage();
-            newWindow.setTitle("Second Stage");
+            newWindow.setTitle("Color combination selection");
             newWindow.setScene(secondScene);
 
             // Specifies the modality for new window.
