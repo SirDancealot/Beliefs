@@ -135,7 +135,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="exitButton" layoutX="308.0" layoutY="710.0" mnemonicParsing="false" text="Exit">
+      <Button fx:id="returnToBeliefEngine" layoutX="290.0" layoutY="705.0" mnemonicParsing="false" onAction="#returnToBeliefEngine" text="Return">
          <font>
             <Font size="30.0" />
          </font>
