@@ -48,9 +48,13 @@ public class InputPopUpController implements Initializable{
     @FXML
     Pane inputPopUpPane;
     
+    private MainMenuController owner;
     boolean[][] colorsArray = new boolean[4][6];
 
     
+    public void setOwner(MainMenuController owner) {
+        this.owner = owner;
+    }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -97,7 +101,9 @@ public class InputPopUpController implements Initializable{
         }
 
         Unit unit = new Unit(colors[0], colors[1], colors[2], colors[3]);
-        
+        owner.unitAdded(unit);
+        Stage stage = (Stage) okButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
@@ -120,8 +126,6 @@ public class InputPopUpController implements Initializable{
 
                 checkBox.setOnAction((event) -> {
                     colorsArray[_x][_y] = !colorsArray[_x][_y];
-                    System.out.println(colorsArray[0][0]);
-
                 });
 
             }

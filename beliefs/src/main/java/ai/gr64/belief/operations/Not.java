@@ -15,7 +15,7 @@ public class Not implements IOpp {
 
     @Override
     public void addOpp(IOpp opp) {
-        if (full)
+        if (isFull())
             throw new Error("An operation cannot be added to an already full operation");
         
         if (opp1 == null) {
