@@ -15,6 +15,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class InputPopUpController implements Initializable{
 
@@ -101,7 +102,8 @@ public class InputPopUpController implements Initializable{
 
     @FXML
     public void cancelButton(ActionEvent event) {
-        
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
 
     
