@@ -60,8 +60,7 @@ public class MastermindController implements Initializable {
             Logic.init();
         else
             loadColors();
-        // Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN,
-        // Color.MAGENTA));
+        // Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
 
     }
 
@@ -173,7 +172,7 @@ public class MastermindController implements Initializable {
         if (match.redPins == 4) {
             ButtonType newGame = new ButtonType("New Game", ButtonBar.ButtonData.OK_DONE);
             ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-            Alert alert = new Alert(AlertType.WARNING,
+            Alert alert = new Alert(AlertType.NONE,
                     "Congratulations, you guessed the colours!",
                     newGame,
                     cancel);
@@ -182,18 +181,26 @@ public class MastermindController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
 
             if (result.isPresent() && result.get() == newGame) {
-                Logic.init();
-                for (int y = 0; y < 10; y++) {
-                    for (int x = 0; x < 4; x++) {
-                        guessesArray[y][x].setFill(Paint.valueOf("DARKGRAY"));
-                        indicatorArray[y][x].setFill(Paint.valueOf("SILVER"));
-                    }
-                }
-
+                newGame();
             }
 
         }
 
+    }
+
+    private void newGame() {
+        Logic.init();
+        for (int y = 0; y < 10; y++) {
+            for (int x = 0; x < 4; x++) {
+                guessesArray[y][x].setFill(Paint.valueOf("DARKGRAY"));
+                indicatorArray[y][x].setFill(Paint.valueOf("SILVER"));
+            }
+        }
+        c1 = Color.UNUSED;
+        c2 = Color.UNUSED;
+        c3 = Color.UNUSED;
+        c4 = Color.UNUSED;
+        selectedColour = Color.UNUSED;
     }
 
     public void updateIndicators(MatchRate match) {
@@ -276,17 +283,6 @@ public class MastermindController implements Initializable {
 
     @FXML
     public void handleNewGameButton() {
-        Logic.init();
-        for (int y = 0; y < 10; y++) {
-            for (int x = 0; x < 4; x++) {
-                guessesArray[y][x].setFill(Paint.valueOf("DARKGREY"));
-                indicatorArray[y][x].setFill(Paint.valueOf("SILVER"));
-            }
-        }
-        c1 = Color.UNUSED;
-        c2 = Color.UNUSED;
-        c3 = Color.UNUSED;
-        c4 = Color.UNUSED;
-        selectedColour = Color.UNUSED;
+        newGame();
     }
 }
