@@ -38,22 +38,7 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <TextField fx:id="qubeTextField" layoutX="313.0" layoutY="277.0" prefHeight="59.0" prefWidth="913.0">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="possibilityTextField" layoutX="313.0" layoutY="143.0" prefHeight="59.0" prefWidth="913.0">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="iTextField" layoutX="313.0" layoutY="425.0" prefHeight="59.0" prefWidth="913.0">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="baseTextField" layoutX="313.0" layoutY="645.0" prefHeight="59.0" prefWidth="913.0">
+      <TextField fx:id="baseTextField" editable="false" layoutX="313.0" layoutY="645.0" prefHeight="59.0" prefWidth="913.0">
          <font>
             <Font size="30.0" />
          </font>
@@ -78,21 +63,6 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <Text fx:id="TextQube" layoutX="182.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Q">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Text>
-      <Text fx:id="TextPoss" layoutX="185.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Text>
-      <Text fx:id="TextI" layoutX="189.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Text>
       <Text fx:id="TextBase" layoutX="184.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
          <font>
             <Font size="30.0" />
