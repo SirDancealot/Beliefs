@@ -4,12 +4,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ai.gr64.Mastermind.MmPossibilities;
+import ai.gr64.Mastermind.MmPossibility;
+import ai.gr64.Mastermind.Game.Color;
 import ai.gr64.belief.interfaces.IOpp;
 import ai.gr64.belief.operations.And;
 import ai.gr64.belief.operations.Not;
 import ai.gr64.belief.operations.Or;
 import ai.gr64.belief.operations.Parenthesis;
 import ai.gr64.belief.operations.Unit;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.IndexRange;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -35,12 +41,24 @@ public class MainMenuController implements Initializable {
     private Button parenthesisButton;
     @FXML
     private TextField baseTextField;
+    @FXML
+    private ListView<MmPossibility> possibilitiesList;
+
+    private ObservableList<MmPossibility> possibilitiesOl;
 
     private static IOpp k = new Parenthesis();
+
+    public MainMenuController() {
+        possibilitiesOl = FXCollections.observableArrayList();
+        MmPossibilities pos1 = new MmPossibilities(new Color[]{ Color.RED, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.ORANGE }, new Color[]{ Color.BLACK }, new Color[]{ Color.BLACK }, new Color[]{ Color.RED });
+        possibilitiesOl.addAll(pos1.getSet());
+    }
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         baseTextField.setText("⬚");
+        possibilitiesList.setItems(possibilitiesOl);
+        possibilitiesList.setCellFactory(possibilitiesListView -> new PossibilityListViewCell());
     }
 
     @FXML
