@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import ai.gr64.Mastermind.MmPossibilities;
 import ai.gr64.Mastermind.MmPossibility;
-import ai.gr64.Mastermind.Game.Color;
 import ai.gr64.belief.BeliefBase;
 import ai.gr64.belief.interfaces.IOpp;
 import ai.gr64.belief.operations.And;
@@ -40,6 +38,8 @@ public class MainMenuController implements Initializable {
     @FXML
     private Button parenthesisButton;
     @FXML
+    private Button resetBase;
+    @FXML
     private TextField baseTextField;
     @FXML
     private ListView<MmPossibility> possibilitiesList;
@@ -49,6 +49,7 @@ public class MainMenuController implements Initializable {
     private static BeliefBase base = new BeliefBase();
 
     private static IOpp k = new Parenthesis();
+    private static String baseText = "⬚";
 
     public MainMenuController() {
         possibilitiesOl = FXCollections.observableArrayList();
@@ -57,7 +58,7 @@ public class MainMenuController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        baseTextField.setText("⬚");
+        baseTextField.setText(baseText);
         possibilitiesList.setItems(possibilitiesOl);
         possibilitiesList.setCellFactory(possibilitiesListView -> new PossibilityListViewCell());
     }
@@ -153,6 +154,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private void switchToMastermind() throws IOException {
+        baseText = baseTextField.getText();
         ((Stage)notButton.getScene().getWindow()).setTitle("Mastermind");
         App.setRoot("mastermindScreen");
     }
@@ -165,5 +167,11 @@ public class MainMenuController implements Initializable {
         possibilitiesOl.setAll(base.getPossibilities().getSet());
         k = new Parenthesis();
         baseTextField.setText("⬚");
+    }
+
+    @FXML
+    public void handleResetBase(ActionEvent event) {
+        base = new BeliefBase();
+        possibilitiesOl.setAll(base.getPossibilities().getSet());
     }
 }
