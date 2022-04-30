@@ -35,15 +35,8 @@ public class MainMenuController implements Initializable {
     private Button parenthesisButton;
     @FXML
     private TextField baseTextField;
-    @FXML
-    private TextField possibilityTextField;
-    @FXML
-    private TextField qubeTextField;
-    @FXML
-    private TextField iTextField;
 
     private static IOpp k = new Parenthesis();
-    private static IOpp i, p, q;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -148,10 +141,4 @@ public class MainMenuController implements Initializable {
     public void handleRevision(ActionEvent event) {
 
     }
-
-    public static void gui() {
-        i = new Parenthesis();
-
-    }
-
 }
