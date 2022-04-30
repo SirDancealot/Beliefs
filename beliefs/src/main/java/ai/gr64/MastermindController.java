@@ -49,6 +49,8 @@ public class MastermindController implements Initializable {
 
     @FXML
     private Button returnToBeliefEngine;
+    @FXML
+    private Button newGameButton;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -56,7 +58,10 @@ public class MastermindController implements Initializable {
         indicatorCircles();
         if (!Logic.isGameInProgress())
             Logic.init();
-        //Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
+        else
+            loadColors();
+        // Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN,
+        // Color.MAGENTA));
 
     }
 
@@ -207,15 +212,37 @@ public class MastermindController implements Initializable {
                 indicatorArray[row][_x].setFill(Paint.valueOf("SILVER"));
             }
         }
+    }
 
+    private void loadColors() {
+        MmPossibility[] guesses = Logic.getGuesses();
+        MatchRate[] matches = Logic.getMatches();
+        for (int y = 0; y < 10; y++) {
+            if (guesses[y] == null)
+                break;
+            int redPins = matches[y].redPins;
+            int whitePins = matches[y].whitePins;
+            for (int x = 0; x < 4; x++) {
+                guessesArray[y][x].setFill(Paint.valueOf(Color.getColor(guesses[y].getValue(x))));
+                if (redPins > 0) {
+                    redPins--;
+                    indicatorArray[y][x].setFill(Paint.valueOf("RED"));
+                } else if (whitePins > 0) {
+                    whitePins--;
+                    indicatorArray[y][x].setFill(Paint.valueOf("WHITE"));
+
+                } else {
+                    indicatorArray[y][x].setFill(Paint.valueOf("SILVER"));
+                }
+            }
+        }
     }
 
     @FXML
     public void returnToBeliefEngine() throws IOException {
         App.setRoot("main");
-        
-    }
 
+    }
 
     @FXML
     public void redButton() {
@@ -247,4 +274,19 @@ public class MastermindController implements Initializable {
         selectedColour = Color.CYAN;
     }
 
+    @FXML
+    public void handleNewGameButton() {
+        Logic.init();
+        for (int y = 0; y < 10; y++) {
+            for (int x = 0; x < 4; x++) {
+                guessesArray[y][x].setFill(Paint.valueOf("DARKGREY"));
+                indicatorArray[y][x].setFill(Paint.valueOf("SILVER"));
+            }
+        }
+        c1 = Color.UNUSED;
+        c2 = Color.UNUSED;
+        c3 = Color.UNUSED;
+        c4 = Color.UNUSED;
+        selectedColour = Color.UNUSED;
+    }
 }

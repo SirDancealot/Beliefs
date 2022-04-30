@@ -145,6 +145,11 @@
             <Font size="30.0" />
          </font>
       </Button>
+      <Button fx:id="newGameButton" layoutX="262.0" layoutY="782.0" mnemonicParsing="false" onAction="#handleNewGameButton" text="New Game">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
       
    </children>
 </Pane>

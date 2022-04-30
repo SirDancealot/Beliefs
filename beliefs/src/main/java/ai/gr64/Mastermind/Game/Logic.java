@@ -8,6 +8,7 @@ public class Logic {
     private static boolean gameInProgress = false;
     private static MmPossibility correct = null;
     private static MmPossibility[] guesses = new MmPossibility[10];
+    private static MatchRate[] guessMatch = new MatchRate[10];
     private static int guessesMade = 0;
 
     // init method to start the game from the beginning.
@@ -17,6 +18,7 @@ public class Logic {
         System.out.println("game has started!");
 
         guesses = new MmPossibility[10];
+        guessMatch = new MatchRate[10];
 
         //Generate what the answer will be
         correct = new MmPossibility(Color.UNUSED, Color.UNUSED, Color.UNUSED, Color.UNUSED);
@@ -64,11 +66,12 @@ public class Logic {
                 }   
             }
         }
-        System.out.println("hvid: " + whitepins + " rød: " + redpins);
     
         MatchRate r = new MatchRate();
         r.whitePins = whitepins;
         r.redPins = redpins;
+
+        guessMatch[guessesMade - 1] = r;
         return r;
 
     }
@@ -85,5 +88,14 @@ public class Logic {
 
     public static boolean isGameInProgress() {
         return gameInProgress;
+    }
+
+    public static MmPossibility[] getGuesses() {
+        return guesses;
+    }
+
+
+    public static MatchRate[] getMatches() {
+        return guessMatch;
     }
 }
