@@ -8,7 +8,6 @@ import ai.gr64.belief.operations.Not;
 import ai.gr64.belief.operations.Or;
 import ai.gr64.belief.operations.Parenthesis;
 import ai.gr64.belief.operations.Unit;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,26 +38,31 @@ public class MainMenuController {
     @FXML
     private TextField iTextField;
 
-    private static IOpp i, k, p, q;
+    private static IOpp k = new Parenthesis();
+    private static IOpp i, p, q;
 
     @FXML
     public void handleNot(ActionEvent event) {
-        i.addOpp(new Not());
+        k.addOpp(new Not());
     }
 
     @FXML
     public void handleAnd(ActionEvent event) {
-        i.addOpp(new And());
+        k.addOpp(new And());
     }
 
     @FXML
     public void handleOr(ActionEvent event) {
-        i.addOpp(new Or());
+        k.addOpp(new Or());
     }
 
     @FXML
     public void handleParenthesis(ActionEvent event) {
-        i.addOpp(new Parenthesis());
+        k.addOpp(new Parenthesis());
+    }
+
+    public void unitAdded(Unit unit) {
+        k.addOpp(unit);
     }
 
     @FXML
@@ -92,10 +96,6 @@ public class MainMenuController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void unitAdded(Unit unit) {
-        System.out.println(unit);
     }
 
     @FXML

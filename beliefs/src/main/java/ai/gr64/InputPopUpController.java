@@ -126,8 +126,6 @@ public class InputPopUpController implements Initializable{
 
                 checkBox.setOnAction((event) -> {
                     colorsArray[_x][_y] = !colorsArray[_x][_y];
-                    System.out.println(colorsArray[0][0]);
-
                 });
 
             }
