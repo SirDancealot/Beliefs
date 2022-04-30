@@ -1,5 +1,6 @@
 package ai.gr64;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -12,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
@@ -44,6 +46,9 @@ public class MastermindController implements Initializable {
     private Circle circleMagenta;
     @FXML
     private Circle circleCyan;
+
+    @FXML
+    private Button returnToBeliefEngine;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -203,6 +208,13 @@ public class MastermindController implements Initializable {
         }
 
     }
+
+    @FXML
+    public void returnToBeliefEngine() throws IOException {
+        App.setRoot("main");
+        
+    }
+
 
     @FXML
     public void redButton() {
