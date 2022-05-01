@@ -82,6 +82,7 @@ public class MainMenuController implements Initializable {
         baseTextField.setText(baseText);
         possibilitiesList.setItems(possibilitiesOl);
         possibilitiesList.setCellFactory(possibilitiesListView -> new PossibilityListViewCell());
+        numPossibilities.setText(String.valueOf(base.getPossibilities().getSet().size()));
     }
 
     @FXML
@@ -217,6 +218,7 @@ public class MainMenuController implements Initializable {
             return;
         base.Revise(k.evaluate());
         possibilitiesOl.setAll(base.getPossibilities().getSet());
+        numPossibilities.setText(String.valueOf(base.getPossibilities().getSet().size()));
         k = new Parenthesis();
         baseTextField.setText("⬚");
 
@@ -227,6 +229,7 @@ public class MainMenuController implements Initializable {
         
         base = new BeliefBase();
         possibilitiesOl.setAll(base.getPossibilities().getSet());
+        numPossibilities.setText(String.valueOf(base.getPossibilities().getSet().size()));
     }
 
     @FXML
