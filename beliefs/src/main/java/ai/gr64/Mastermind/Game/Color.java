@@ -1,7 +1,6 @@
 package ai.gr64.Mastermind.Game;
 
-
-public enum Color {    
+public enum Color {
     RED(0),
     BLACK(1),
     GREEN(2),
@@ -11,6 +10,7 @@ public enum Color {
     UNUSED(-1);
 
     public final int value;
+
     private Color(int value) {
         this.value = value;
     }
@@ -29,7 +29,7 @@ public enum Color {
                 return MAGENTA;
             case 5:
                 return CYAN;
-        
+
             default:
                 throw new Error("Value must be in range 0-5");
         }
@@ -49,10 +49,10 @@ public enum Color {
                 return "DEEPPINK";
             case CYAN:
                 return "CYAN";
-        
+
             default:
                 throw new Error("Value must be in range 0-5");
         }
-        
+
     }
 }

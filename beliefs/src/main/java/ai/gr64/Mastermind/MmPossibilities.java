@@ -22,15 +22,16 @@ public class MmPossibilities implements Possibilities {
         }
     }
 
-    public MmPossibilities() { }
-    
-    public void AddPossibility(MmPossibility pos){
+    public MmPossibilities() {
+    }
+
+    public void AddPossibility(MmPossibility pos) {
         possibilities.add(pos);
     }
 
     @Override
     public Possibilities innerJoin(Possibilities other) {
-        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities)other : null;
+        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities) other : null;
         if (o == null) {
             throw new Error("Cannot compare two different types of possibilities");
         }
@@ -47,7 +48,7 @@ public class MmPossibilities implements Possibilities {
 
     @Override
     public Possibilities outerJoin(Possibilities other) {
-        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities)other : null;
+        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities) other : null;
         if (o == null) {
             throw new Error("Cannot compare two different types of possibilities");
         }
@@ -65,7 +66,7 @@ public class MmPossibilities implements Possibilities {
 
     @Override
     public Possibilities exclusive(Possibilities other) {
-        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities)other : null;
+        MmPossibilities o = other instanceof MmPossibilities ? (MmPossibilities) other : null;
         if (o == null) {
             throw new Error("Cannot compare two different types of possibilities");
         }
@@ -97,14 +98,13 @@ public class MmPossibilities implements Possibilities {
         return possibilities.contains(possibility);
     }
 
-    private boolean remove (MmPossibility possibility) {
+    private boolean remove(MmPossibility possibility) {
         return possibilities.remove(possibility);
     }
 
-    private boolean addAll(MmPossibilities pos){
+    private boolean addAll(MmPossibilities pos) {
         return possibilities.addAll(pos.getSet());
     }
-
 
     public HashSet<MmPossibility> getSet() {
         return possibilities;
@@ -117,7 +117,8 @@ public class MmPossibilities implements Possibilities {
             for (int j = 0; j < 6; j++) {
                 for (int k = 0; k < 6; k++) {
                     for (int l = 0; l < 6; l++) {
-                        pos.AddPossibility(new MmPossibility(Color.fromValue(i), Color.fromValue(j), Color.fromValue(k), Color.fromValue(l)));
+                        pos.AddPossibility(new MmPossibility(Color.fromValue(i), Color.fromValue(j), Color.fromValue(k),
+                                Color.fromValue(l)));
                     }
                 }
             }
@@ -125,8 +126,8 @@ public class MmPossibilities implements Possibilities {
 
         return pos;
     }
-    
+
     public MmPossibility getPossibility(int index) {
-        return (MmPossibility)possibilities.toArray()[index];
+        return (MmPossibility) possibilities.toArray()[index];
     }
 }

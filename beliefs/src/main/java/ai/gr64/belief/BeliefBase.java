@@ -10,7 +10,7 @@ public class BeliefBase {
     }
 
     public MmPossibilities getPossibilities() {
-        return (MmPossibilities)base;
+        return (MmPossibilities) base;
     }
 
     public void Revise(Possibilities possibilities) {

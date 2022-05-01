@@ -52,9 +52,9 @@ public class And implements IOpp {
 
         if (!opp2.isFull())
             return false;
-        
+
         full = true;
         return true;
     }
-    
+
 }

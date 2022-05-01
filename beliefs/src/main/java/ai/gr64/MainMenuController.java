@@ -5,12 +5,8 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-import ai.gr64.Mastermind.MmPossibilities;
 import ai.gr64.Mastermind.MmPossibility;
-import ai.gr64.Mastermind.AI.AIUtils;
-import ai.gr64.Mastermind.Game.Color;
 import ai.gr64.Mastermind.Game.Logic;
-import ai.gr64.Mastermind.Game.MatchRate;
 import ai.gr64.belief.BeliefBase;
 import ai.gr64.belief.interfaces.IOpp;
 import ai.gr64.belief.operations.And;
@@ -88,7 +84,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleNot(ActionEvent event) {
-       if (checkFull())
+        if (checkFull())
             return;
         k.addOpp(new Not());
         updateBaseText("¬⬚");
@@ -97,7 +93,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleAnd(ActionEvent event) {
-        
+
         if (checkFull())
             return;
         k.addOpp(new And());
@@ -106,7 +102,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleOr(ActionEvent event) {
-        
+
         if (checkFull())
             return;
         k.addOpp(new Or());
@@ -115,7 +111,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleParenthesis(ActionEvent event) {
-        
+
         if (checkFull())
             return;
         k.addOpp(new Parenthesis());
@@ -123,7 +119,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void unitAdded(Unit unit) {
-        
+
         if (checkFull())
             return;
         k.addOpp(unit);
@@ -141,7 +137,7 @@ public class MainMenuController implements Initializable {
     }
 
     private void updateBaseText(String replacement) {
-        
+
         String org = baseTextField.getText();
         baseTextField.setText(org.replace("⬚", replacement));
 
@@ -150,18 +146,19 @@ public class MainMenuController implements Initializable {
     @FXML
     public void handleLoadBeliefBase() {
         ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
-            ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-            Alert alert = new Alert(AlertType.NONE,
-                    "Do you want to load the belief base from the current Mastermind game?",
-                    yes,
-                    cancel);
+        ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+        Alert alert = new Alert(AlertType.NONE,
+                "Do you want to load the belief base from the current Mastermind game?",
+                yes,
+                cancel);
 
-            alert.setTitle("Load belief base");
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent() && result.get() == yes) {
-                loadBeliefBase();;
-            }
-        
+        alert.setTitle("Load belief base");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == yes) {
+            loadBeliefBase();
+            ;
+        }
+
     }
 
     public void loadBeliefBase() {
@@ -172,7 +169,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleUnit(ActionEvent event) {
-        
+
         Stage stage = (Stage) (((Button) event.getSource()).getScene().getWindow());
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("inputPopUp.fxml"));
@@ -199,7 +196,6 @@ public class MainMenuController implements Initializable {
 
             newWindow.show();
 
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -207,7 +203,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private void switchToMastermind() throws IOException {
-        
+
         baseText = baseTextField.getText();
         ((Stage) notButton.getScene().getWindow()).setTitle("Mastermind");
         App.setRoot("mastermindScreen");
@@ -215,7 +211,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleRevision(ActionEvent event) {
-        
+
         if (!k.isFull())
             return;
         base.Revise(k.evaluate());
@@ -228,7 +224,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleResetBase(ActionEvent event) {
-        
+
         base = new BeliefBase();
         possibilitiesOl.setAll(base.getPossibilities().getSet());
         numPossibilities.setText(String.valueOf(base.getPossibilities().getSet().size()));
@@ -236,7 +232,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleResetBaseText() {
-        
+
         baseText = "⬚";
         k = new Parenthesis();
         baseTextField.setText(baseText);

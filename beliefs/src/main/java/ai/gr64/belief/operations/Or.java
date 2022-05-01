@@ -13,7 +13,7 @@ public class Or implements IOpp {
     public Possibilities evaluate() {
         return opp1.evaluate().outerJoin(opp2.evaluate());
     }
-    
+
     @Override
     public void addOpp(IOpp opp) {
         if (isFull())
@@ -52,9 +52,9 @@ public class Or implements IOpp {
 
         if (!opp2.isFull())
             return false;
-        
+
         full = true;
         return true;
     }
- 
+
 }

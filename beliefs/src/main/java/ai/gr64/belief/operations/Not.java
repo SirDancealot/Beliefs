@@ -17,7 +17,7 @@ public class Not implements IOpp {
     public void addOpp(IOpp opp) {
         if (isFull())
             throw new Error("An operation cannot be added to an already full operation");
-        
+
         if (opp1 == null) {
             opp1 = opp;
             return;
@@ -33,7 +33,7 @@ public class Not implements IOpp {
 
         if (opp1 == null)
             return false;
-        
+
         if (opp1.isFull()) {
             full = true;
             return true;
@@ -41,5 +41,5 @@ public class Not implements IOpp {
 
         return false;
     }
-    
+
 }

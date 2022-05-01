@@ -23,7 +23,7 @@ public class Logic {
         guesses = new MmPossibility[10];
         guessMatch = new MatchRate[10];
 
-        //Generate what the answer will be
+        // Generate what the answer will be
         correct = new MmPossibility(Color.UNUSED, Color.UNUSED, Color.UNUSED, Color.UNUSED);
 
         Random r = new Random();
@@ -33,9 +33,9 @@ public class Logic {
         }
     }
 
-
-    //this method returns how good a guess the ism and also if the guess is correct
-    //compare guess and correct, return how many colors are correct position, or just the right color (red and white pegs)
+    // this method returns how good a guess the ism and also if the guess is correct
+    // compare guess and correct, return how many colors are correct position, or
+    // just the right color (red and white pegs)
     public static MatchRate guess(MmPossibility guess) {
         guesses[guessesMade] = guess;
         guessesMade++;
@@ -45,31 +45,31 @@ public class Logic {
         if (guess == correct) {
             redpins = 4;
             gameInProgress = false;
-        }else if(guess != correct){
-            
-            boolean[] usedCorrect = new boolean[] {false, false, false, false};
-            boolean[] usedGuess = new boolean[] {false, false, false, false};
+        } else if (guess != correct) {
 
-            for(int i = 0; i < 4; i++){
-                if(guess.getValue(i) == correct.getValue(i)){
+            boolean[] usedCorrect = new boolean[] { false, false, false, false };
+            boolean[] usedGuess = new boolean[] { false, false, false, false };
+
+            for (int i = 0; i < 4; i++) {
+                if (guess.getValue(i) == correct.getValue(i)) {
                     redpins++;
                     usedCorrect[i] = true;
                     usedGuess[i] = true;
                     continue;
                 }
             }
-            for(int i = 0; i < 4; i++){
-                for(int j = 0; j < 4; j++){
-                    if(guess.getValue(j) == correct.getValue(i) && !usedCorrect[i] && !usedGuess[j]){
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (guess.getValue(j) == correct.getValue(i) && !usedCorrect[i] && !usedGuess[j]) {
                         usedCorrect[i] = true;
                         usedGuess[j] = true;
                         whitepins++;
-                        
+
                     }
-                }   
+                }
             }
         }
-    
+
         MatchRate r = new MatchRate();
         r.whitePins = whitepins;
         r.redPins = redpins;
@@ -80,10 +80,10 @@ public class Logic {
 
     }
 
-    //testing method
+    // testing method
     public static void forceCorrect(MmPossibility _correct) {
         correct = _correct;
-        
+
     }
 
     public static int getGuessesMade() {
@@ -97,7 +97,6 @@ public class Logic {
     public static MmPossibility[] getGuesses() {
         return guesses;
     }
-
 
     public static MatchRate[] getMatches() {
         return guessMatch;

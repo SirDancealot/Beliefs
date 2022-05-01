@@ -11,7 +11,7 @@ public class Parenthesis implements IOpp {
     @Override
     public Possibilities evaluate() {
         return opp1.evaluate();
-    } 
+    }
 
     @Override
     public void addOpp(IOpp opp) {
@@ -39,9 +39,9 @@ public class Parenthesis implements IOpp {
 
         if (!opp1.isFull())
             return false;
-        
+
         full = true;
         return true;
     }
- 
+
 }
