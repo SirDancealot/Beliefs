@@ -2,11 +2,14 @@ package ai.gr64.Mastermind.AI;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import ai.gr64.Mastermind.MmPossibilities;
 import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.Mastermind.Game.Logic;
 import ai.gr64.Mastermind.Game.MatchRate;
+import ai.gr64.belief.BeliefBase;
 
 public class AIUtils {
     public static List<Match[]> generatePermutations(List<Match> remaining) {
@@ -213,5 +216,15 @@ public class AIUtils {
         }
 
         return acc;
+    }
+
+    public static MmPossibility getNextGuess() {
+        BeliefBase base = Logic.getBeliefBase();
+
+        Random r = new Random(System.currentTimeMillis());
+
+        MmPossibilities possibilities = base.getPossibilities();
+
+        return possibilities.getPossibility(r.nextInt(possibilities.getSet().size()));
     }
 }

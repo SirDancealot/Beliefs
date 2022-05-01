@@ -126,4 +126,7 @@ public class MmPossibilities implements Possibilities {
         return pos;
     }
     
+    public MmPossibility getPossibility(int index) {
+        return (MmPossibility)possibilities.toArray()[index];
+    }
 }

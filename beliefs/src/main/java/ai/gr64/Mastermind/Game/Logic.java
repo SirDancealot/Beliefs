@@ -2,6 +2,8 @@ package ai.gr64.Mastermind.Game;
 
 import java.util.Random;
 import ai.gr64.Mastermind.MmPossibility;
+import ai.gr64.Mastermind.AI.AIUtils;
+import ai.gr64.belief.BeliefBase;
 
 public class Logic {
     private static boolean gameInProgress = false;
@@ -9,11 +11,13 @@ public class Logic {
     private static MmPossibility[] guesses = new MmPossibility[10];
     private static MatchRate[] guessMatch = new MatchRate[10];
     private static int guessesMade = 0;
+    private static BeliefBase base = new BeliefBase();
 
     // init method to start the game from the beginning.
     public static void init() {
         gameInProgress = true;
         guessesMade = 0;
+        base = new BeliefBase();
         System.out.println("game has started!");
 
         guesses = new MmPossibility[10];
@@ -71,6 +75,7 @@ public class Logic {
         r.redPins = redpins;
 
         guessMatch[guessesMade - 1] = r;
+        base.Revise(AIUtils.LegalFromMove(guess, r));
         return r;
 
     }
@@ -96,5 +101,9 @@ public class Logic {
 
     public static MatchRate[] getMatches() {
         return guessMatch;
+    }
+
+    public static BeliefBase getBeliefBase() {
+        return base;
     }
 }
