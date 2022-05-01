@@ -135,7 +135,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="returnToBeliefEngine" layoutX="290.0" layoutY="705.0" mnemonicParsing="false" onAction="#returnToBeliefEngine" text="Return">
+      <Button fx:id="returnToBeliefEngine" layoutX="290.0" layoutY="782.0" mnemonicParsing="false" onAction="#returnToBeliefEngine" text="Return">
          <font>
             <Font size="30.0" />
          </font>
@@ -145,7 +145,7 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="newGameButton" layoutX="262.0" layoutY="782.0" mnemonicParsing="false" onAction="#handleNewGameButton" text="New Game">
+      <Button fx:id="newGameButton" layoutX="261.0" layoutY="705.0" mnemonicParsing="false" onAction="#handleNewGameButton" text="New Game">
          <font>
             <Font size="30.0" />
          </font>
