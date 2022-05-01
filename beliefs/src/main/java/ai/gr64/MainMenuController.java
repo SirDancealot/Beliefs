@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ai.gr64.Mastermind.MmPossibilities;
 import ai.gr64.Mastermind.MmPossibility;
+import ai.gr64.Mastermind.AI.AIUtils;
+import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.Mastermind.Game.MatchRate;
 import ai.gr64.belief.BeliefBase;
 import ai.gr64.belief.interfaces.IOpp;
 import ai.gr64.belief.operations.And;
