@@ -9,7 +9,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-public class PossibilityListViewCell extends ListCell<MmPossibility>{
+public class PossibilityListViewCell extends ListCell<MmPossibility> {
     @FXML
     private Text column1;
     @FXML
@@ -20,7 +20,7 @@ public class PossibilityListViewCell extends ListCell<MmPossibility>{
     private Text column4;
     @FXML
     private GridPane banana;
-    
+
     private FXMLLoader mlLoader;
 
     @Override
@@ -30,7 +30,7 @@ public class PossibilityListViewCell extends ListCell<MmPossibility>{
         if (empty || possibility == null) {
             setText(null);
             setGraphic(null);
-            
+
         } else {
             if (mlLoader == null) {
                 mlLoader = new FXMLLoader(getClass().getResource("possibilityListViewCell.fxml"));
@@ -46,14 +46,11 @@ public class PossibilityListViewCell extends ListCell<MmPossibility>{
             column2.setText(possibility.getValue(1).toString());
             column3.setText(possibility.getValue(2).toString());
             column4.setText(possibility.getValue(3).toString());
-    
+
             setText(null);
             setGraphic(banana);
         }
 
-
-
-        
     }
-    
+
 }

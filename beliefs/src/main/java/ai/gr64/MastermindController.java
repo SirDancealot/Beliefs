@@ -61,8 +61,9 @@ public class MastermindController implements Initializable {
             Logic.init();
         else
             loadColors();
-        // Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
-
+        //For testing
+        //Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
+        
     }
 
     public void guessCircles() {
@@ -201,7 +202,7 @@ public class MastermindController implements Initializable {
             if (result.isPresent() && result.get() == newGame) {
                 newGame();
             }
-            
+
         }
 
     }
@@ -221,8 +222,6 @@ public class MastermindController implements Initializable {
         selectedColour = Color.UNUSED;
         clearAllStrokes();
     }
-
-    
 
     public void updateIndicators(MatchRate match) {
         int row = Logic.getGuessesMade() - 1;
@@ -268,7 +267,7 @@ public class MastermindController implements Initializable {
 
     @FXML
     public void returnToBeliefEngine() throws IOException {
-        ((Stage)returnToBeliefEngine.getScene().getWindow()).setTitle("Belief Engine");
+        ((Stage) returnToBeliefEngine.getScene().getWindow()).setTitle("Belief Engine");
         App.setRoot("main");
 
     }

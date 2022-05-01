@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import ai.gr64.Mastermind.Game.Color;
-import ai.gr64.belief.interfaces.IOpp;
 import ai.gr64.belief.operations.Unit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,7 +16,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class InputPopUpController implements Initializable{
+public class InputPopUpController implements Initializable {
 
     @FXML
     private Text color1;
@@ -47,11 +46,10 @@ public class InputPopUpController implements Initializable{
 
     @FXML
     Pane inputPopUpPane;
-    
+
     private MainMenuController owner;
     boolean[][] colorsArray = new boolean[4][6];
 
-    
     public void setOwner(MainMenuController owner) {
         this.owner = owner;
     }
@@ -60,23 +58,20 @@ public class InputPopUpController implements Initializable{
     public void initialize(URL arg0, ResourceBundle arg1) {
         colorsArray = new boolean[4][6];
         initializeCheckBoxes();
-        
-        
-    }
-    
 
+    }
 
     @FXML
     public void okButton(ActionEvent event) {
         int[] row = new int[4];
         for (int x = 0; x < 4; x++) {
-            
+
             for (int y = 0; y < 6; y++) {
                 if (colorsArray[x][y]) {
                     row[x]++;
                 }
             }
-            
+
         }
         if (row[0] * row[1] * row[2] * row[3] == 0) {
             Alert a = new Alert(AlertType.INFORMATION);
@@ -87,7 +82,7 @@ public class InputPopUpController implements Initializable{
             a.show();
             return;
         }
-        
+
         Color[][] colors = new Color[4][];
         for (int i = 0; i < 4; i++) {
             colors[i] = new Color[row[i]];
@@ -114,15 +109,14 @@ public class InputPopUpController implements Initializable{
         MainMenuController.inputPopUpOpen = false;
     }
 
-    
     public void initializeCheckBoxes() {
         for (int x = 0; x < 4; x++) {
             final int _x = x;
             for (int y = 0; y < 6; y++) {
                 final int _y = y;
                 CheckBox checkBox = new CheckBox();
-                checkBox.setLayoutX(93+x*133);
-                checkBox.setLayoutY(87+y*40);
+                checkBox.setLayoutX(93 + x * 133);
+                checkBox.setLayoutY(87 + y * 40);
 
                 inputPopUpPane.getChildren().add(checkBox);
 
@@ -132,13 +126,7 @@ public class InputPopUpController implements Initializable{
 
             }
         }
-        
+
     }
 
-
-
-
-
-    
-    
 }

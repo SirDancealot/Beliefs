@@ -80,8 +80,7 @@ public class MainMenuController implements Initializable {
             return;
         k.addOpp(new Not());
         updateBaseText("¬⬚");
-        
-        
+
     }
 
     @FXML
@@ -190,7 +189,7 @@ public class MainMenuController implements Initializable {
             return;
         }
         baseText = baseTextField.getText();
-        ((Stage)notButton.getScene().getWindow()).setTitle("Mastermind");
+        ((Stage) notButton.getScene().getWindow()).setTitle("Mastermind");
         App.setRoot("mastermindScreen");
     }
 
@@ -205,7 +204,7 @@ public class MainMenuController implements Initializable {
         possibilitiesOl.setAll(base.getPossibilities().getSet());
         k = new Parenthesis();
         baseTextField.setText("⬚");
-        
+
     }
 
     @FXML
@@ -227,5 +226,4 @@ public class MainMenuController implements Initializable {
         baseTextField.setText(baseText);
     }
 
-        
 }

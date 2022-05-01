@@ -11,13 +11,12 @@ import javafx.stage.Stage;
 /**
  * JavaFX App
  */
-public class App extends Application{
+public class App extends Application {
 
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        //scene = new Scene(loadFXML("inputPopUp"), 600, 400);
         scene = new Scene(loadFXML("main"), 1920, 1024);
         stage.setTitle("Belief Engine");
         stage.setScene(scene);
