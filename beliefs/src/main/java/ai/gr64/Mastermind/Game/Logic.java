@@ -1,7 +1,6 @@
 package ai.gr64.Mastermind.Game;
 
 import java.util.Random;
-
 import ai.gr64.Mastermind.MmPossibility;
 
 public class Logic {
