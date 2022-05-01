@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import ai.gr64.Mastermind.MmPossibility;
+import ai.gr64.Mastermind.AI.AIUtils;
 import ai.gr64.Mastermind.Game.Color;
 import ai.gr64.Mastermind.Game.Logic;
 import ai.gr64.Mastermind.Game.MatchRate;
@@ -56,21 +57,21 @@ public class MastermindController implements Initializable {
     @FXML
     private Button makeTheAIGuess;
 
-    
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         guessCircles();
         indicatorCircles();
         if (!Logic.isGameInProgress())
-        Logic.init();
+            Logic.init();
         else
-        loadColors();
-        //For testing
-        //Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
-        //makeTheAIGuess.setTooltip(new Tooltip("The AI will make a guess"));
-        
+            loadColors();
+        // For testing
+        // Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN,
+        // Color.MAGENTA));
+        // makeTheAIGuess.setTooltip(new Tooltip("The AI will make a guess"));
+
     }
-    
+
     public void guessCircles() {
         float xCoordinate = 893.0f;
         float yCoordinate = 823.0f;
@@ -167,6 +168,11 @@ public class MastermindController implements Initializable {
             a.show();
             return;
         }
+
+        makeGuess();
+    }
+
+    private void makeGuess() {
         MmPossibility guess = new MmPossibility(c1, c2, c3, c4);
         MatchRate match = Logic.guess(guess);
         c1 = Color.UNUSED;
@@ -207,30 +213,37 @@ public class MastermindController implements Initializable {
             if (result.isPresent() && result.get() == newGame) {
                 newGame();
             }
-
         }
-
     }
 
     @FXML
     public void handleMakeTheAIGuess(ActionEvent event) {
         ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
-            ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-            Alert alert = new Alert(AlertType.NONE,
-                    "Do you want the AI to make the next guess?",
-                    yes,
-                    cancel);
+        ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+        Alert alert = new Alert(AlertType.NONE,
+                "Do you want the AI to make the next guess?",
+                yes,
+                cancel);
 
-            alert.setTitle("AI guess");
-            Optional<ButtonType> result = alert.showAndWait();
-            
-            if (result.isPresent() && result.get() == yes) {
-                makeTheAIGuess();;
-            }
+        alert.setTitle("AI guess");
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == yes) {
+            makeTheAIGuess();
+        }
     }
 
     private void makeTheAIGuess() {
-
+        MmPossibility guess = AIUtils.getNextGuess();
+        c1 = guess.getValue(0);
+        c2 = guess.getValue(1);
+        c3 = guess.getValue(2);
+        c4 = guess.getValue(3);
+        guessesArray[Logic.getGuessesMade()][0].setFill(Paint.valueOf(Color.getColor(c1)));
+        guessesArray[Logic.getGuessesMade()][1].setFill(Paint.valueOf(Color.getColor(c2)));
+        guessesArray[Logic.getGuessesMade()][2].setFill(Paint.valueOf(Color.getColor(c3)));
+        guessesArray[Logic.getGuessesMade()][3].setFill(Paint.valueOf(Color.getColor(c4)));
+        makeGuess();
     }
 
     private void newGame() {
