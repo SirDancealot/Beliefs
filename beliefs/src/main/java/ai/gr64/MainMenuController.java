@@ -9,6 +9,7 @@ import ai.gr64.Mastermind.MmPossibilities;
 import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.AI.AIUtils;
 import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.Mastermind.Game.Logic;
 import ai.gr64.Mastermind.Game.MatchRate;
 import ai.gr64.belief.BeliefBase;
 import ai.gr64.belief.interfaces.IOpp;
@@ -164,8 +165,9 @@ public class MainMenuController implements Initializable {
     }
 
     public void loadBeliefBase() {
-
-        
+        base = Logic.getBeliefBase().clone();
+        possibilitiesOl.setAll(base.getPossibilities().getSet());
+        numPossibilities.setText(String.valueOf(base.getPossibilities().getSet().size()));
     }
 
     @FXML

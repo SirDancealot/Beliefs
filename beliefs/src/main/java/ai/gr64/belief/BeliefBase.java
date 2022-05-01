@@ -16,4 +16,14 @@ public class BeliefBase {
     public void Revise(Possibilities possibilities) {
         base = base.innerJoin(possibilities);
     }
+
+    public BeliefBase clone() {
+        BeliefBase newBase = new BeliefBase();
+        newBase.setPossibilities((new MmPossibilities()).outerJoin(base));
+        return newBase;
+    }
+
+    private void setPossibilities(Possibilities possibilities) {
+        this.base = possibilities;
+    }
 }
