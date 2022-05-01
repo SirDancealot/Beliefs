@@ -99,14 +99,12 @@ public class InputPopUpController implements Initializable {
         owner.unitAdded(unit);
         Stage stage = (Stage) okButton.getScene().getWindow();
         stage.close();
-        MainMenuController.inputPopUpOpen = false;
     }
 
     @FXML
     public void cancelButton(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
-        MainMenuController.inputPopUpOpen = false;
     }
 
     public void initializeCheckBoxes() {

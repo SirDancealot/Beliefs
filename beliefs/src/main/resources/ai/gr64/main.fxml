@@ -44,7 +44,7 @@
             <Font size="30.0" />
          </font>
       </TextField>
-      <Button fx:id="buttonMastermind" layoutX="1511.0" layoutY="443.0" mnemonicParsing="false" onAction="#switchToMastermind" prefHeight="65.0" prefWidth="208.0" text="Mastermind">
+      <Button fx:id="buttonMastermind" layoutX="1511.0" layoutY="232.0" mnemonicParsing="false" onAction="#switchToMastermind" prefHeight="65.0" prefWidth="208.0" text="Mastermind">
          <font>
             <Font size="30.0" />
          </font>
@@ -68,6 +68,21 @@
       <Button fx:id="resetBaseText" layoutX="1161.0" layoutY="644.0" mnemonicParsing="false" onAction="#handleResetBaseText" prefHeight="65.0" prefWidth="65.0" text="⭯" textAlignment="CENTER">
          <font>
             <Font size="26.0" />
+         </font>
+      </Button>
+      <Text fx:id="numPossibilities" layoutX="1226.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="1226.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of possibilities:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="loadBeliefBase" layoutX="1511.0" layoutY="321.0" mnemonicParsing="false" onAction="#handleLoadBeliefBase" prefHeight="92.0" prefWidth="208.0" text="Load base from Mastermind" wrapText="true">
+         <font>
+            <Font size="24.0" />
          </font>
       </Button>
       

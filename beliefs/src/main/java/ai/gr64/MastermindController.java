@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
@@ -52,20 +53,24 @@ public class MastermindController implements Initializable {
     private Button returnToBeliefEngine;
     @FXML
     private Button newGameButton;
+    @FXML
+    private Button makeTheAIGuess;
 
+    
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         guessCircles();
         indicatorCircles();
         if (!Logic.isGameInProgress())
-            Logic.init();
+        Logic.init();
         else
-            loadColors();
+        loadColors();
         //For testing
         //Logic.forceCorrect(new MmPossibility(Color.BLACK, Color.CYAN, Color.GREEN, Color.MAGENTA));
+        //makeTheAIGuess.setTooltip(new Tooltip("The AI will make a guess"));
         
     }
-
+    
     public void guessCircles() {
         float xCoordinate = 893.0f;
         float yCoordinate = 823.0f;
@@ -204,6 +209,27 @@ public class MastermindController implements Initializable {
             }
 
         }
+
+    }
+
+    @FXML
+    public void handleMakeTheAIGuess(ActionEvent event) {
+        ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
+            ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            Alert alert = new Alert(AlertType.NONE,
+                    "Do you want the AI to make the next guess?",
+                    yes,
+                    cancel);
+
+            alert.setTitle("AI guess");
+            Optional<ButtonType> result = alert.showAndWait();
+            
+            if (result.isPresent() && result.get() == yes) {
+                makeTheAIGuess();;
+            }
+    }
+
+    private void makeTheAIGuess() {
 
     }
 

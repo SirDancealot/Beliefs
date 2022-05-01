@@ -2,6 +2,7 @@ package ai.gr64;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import ai.gr64.Mastermind.MmPossibility;
@@ -20,9 +21,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainMenuController implements Initializable {
@@ -46,15 +53,17 @@ public class MainMenuController implements Initializable {
     @FXML
     private Button buttonMastermind;
     @FXML
+    private Button loadBeliefBase;
+    @FXML
     private TextField baseTextField;
+    @FXML
+    private Text numPossibilities;
     @FXML
     private ListView<MmPossibility> possibilitiesList;
 
     private ObservableList<MmPossibility> possibilitiesOl;
 
     private static BeliefBase base = new BeliefBase();
-
-    public static boolean inputPopUpOpen = false;
 
     private static IOpp k = new Parenthesis();
     private static String baseText = "⬚";
@@ -73,10 +82,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleNot(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
-        if (checkFull())
+       if (checkFull())
             return;
         k.addOpp(new Not());
         updateBaseText("¬⬚");
@@ -85,9 +91,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleAnd(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         if (checkFull())
             return;
         k.addOpp(new And());
@@ -96,9 +100,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleOr(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         if (checkFull())
             return;
         k.addOpp(new Or());
@@ -107,9 +109,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleParenthesis(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         if (checkFull())
             return;
         k.addOpp(new Parenthesis());
@@ -117,9 +117,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void unitAdded(Unit unit) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         if (checkFull())
             return;
         k.addOpp(unit);
@@ -137,19 +135,37 @@ public class MainMenuController implements Initializable {
     }
 
     private void updateBaseText(String replacement) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         String org = baseTextField.getText();
         baseTextField.setText(org.replace("⬚", replacement));
 
     }
 
     @FXML
+    public void handleLoadBeliefBase() {
+        ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
+            ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            Alert alert = new Alert(AlertType.NONE,
+                    "Do you want to load the belief base from the current Mastermind game?",
+                    yes,
+                    cancel);
+
+            alert.setTitle("Load belief base");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == yes) {
+                loadBeliefBase();;
+            }
+        
+    }
+
+    public void loadBeliefBase() {
+
+        
+    }
+
+    @FXML
     public void handleUnit(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         Stage stage = (Stage) (((Button) event.getSource()).getScene().getWindow());
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("inputPopUp.fxml"));
@@ -176,7 +192,6 @@ public class MainMenuController implements Initializable {
 
             newWindow.show();
 
-            inputPopUpOpen = true;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -185,9 +200,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private void switchToMastermind() throws IOException {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         baseText = baseTextField.getText();
         ((Stage) notButton.getScene().getWindow()).setTitle("Mastermind");
         App.setRoot("mastermindScreen");
@@ -195,9 +208,7 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleRevision(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         if (!k.isFull())
             return;
         base.Revise(k.evaluate());
@@ -209,18 +220,14 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleResetBase(ActionEvent event) {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         base = new BeliefBase();
         possibilitiesOl.setAll(base.getPossibilities().getSet());
     }
 
     @FXML
     public void handleResetBaseText() {
-        if (inputPopUpOpen) {
-            return;
-        }
+        
         baseText = "⬚";
         k = new Parenthesis();
         baseTextField.setText(baseText);

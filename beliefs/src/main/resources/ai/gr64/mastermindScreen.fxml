@@ -140,12 +140,17 @@
             <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="guessButton" layoutX="295.0" layoutY="395.0" mnemonicParsing="false" onAction="#guess" text="Guess">
+      <Button fx:id="guessButton" layoutX="295.0" layoutY="358.0" mnemonicParsing="false" onAction="#guess" text="Guess">
          <font>
             <Font size="30.0" />
          </font>
       </Button>
       <Button fx:id="newGameButton" layoutX="262.0" layoutY="782.0" mnemonicParsing="false" onAction="#handleNewGameButton" text="New Game">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="makeTheAIGuess" layoutX="248.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleMakeTheAIGuess" prefHeight="110.0" prefWidth="213.0" text="AI makes the next guess" wrapText="true">
          <font>
             <Font size="30.0" />
          </font>
