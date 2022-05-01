@@ -42,6 +42,8 @@ public class MainMenuController implements Initializable {
     @FXML
     private TextField baseTextField;
     @FXML
+    private Button resetBaseText;
+    @FXML
     private ListView<MmPossibility> possibilitiesList;
 
     private ObservableList<MmPossibility> possibilitiesOl;
@@ -173,5 +175,12 @@ public class MainMenuController implements Initializable {
     public void handleResetBase(ActionEvent event) {
         base = new BeliefBase();
         possibilitiesOl.setAll(base.getPossibilities().getSet());
+    }
+
+    @FXML
+    public void handleResetBaseText() {
+        baseText = "⬚";
+        k = new Parenthesis();
+        baseTextField.setText(baseText);
     }
 }
