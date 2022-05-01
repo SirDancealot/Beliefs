@@ -40,15 +40,21 @@ public class MainMenuController implements Initializable {
     @FXML
     private Button resetBase;
     @FXML
-    private TextField baseTextField;
-    @FXML
     private Button resetBaseText;
+    @FXML
+    private Button revisionButton;
+    @FXML
+    private Button buttonMastermind;
+    @FXML
+    private TextField baseTextField;
     @FXML
     private ListView<MmPossibility> possibilitiesList;
 
     private ObservableList<MmPossibility> possibilitiesOl;
 
     private static BeliefBase base = new BeliefBase();
+
+    public static boolean inputPopUpOpen = false;
 
     private static IOpp k = new Parenthesis();
     private static String baseText = "⬚";
@@ -67,14 +73,22 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleNot(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         if (checkFull())
             return;
         k.addOpp(new Not());
         updateBaseText("¬⬚");
+        
+        
     }
 
     @FXML
     public void handleAnd(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         if (checkFull())
             return;
         k.addOpp(new And());
@@ -83,6 +97,9 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleOr(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         if (checkFull())
             return;
         k.addOpp(new Or());
@@ -91,6 +108,9 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleParenthesis(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         if (checkFull())
             return;
         k.addOpp(new Parenthesis());
@@ -98,6 +118,9 @@ public class MainMenuController implements Initializable {
     }
 
     public void unitAdded(Unit unit) {
+        if (inputPopUpOpen) {
+            return;
+        }
         if (checkFull())
             return;
         k.addOpp(unit);
@@ -115,14 +138,19 @@ public class MainMenuController implements Initializable {
     }
 
     private void updateBaseText(String replacement) {
+        if (inputPopUpOpen) {
+            return;
+        }
         String org = baseTextField.getText();
-
         baseTextField.setText(org.replace("⬚", replacement));
 
     }
 
     @FXML
     public void handleUnit(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         Stage stage = (Stage) (((Button) event.getSource()).getScene().getWindow());
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("inputPopUp.fxml"));
@@ -149,6 +177,8 @@ public class MainMenuController implements Initializable {
 
             newWindow.show();
 
+            inputPopUpOpen = true;
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -156,6 +186,9 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private void switchToMastermind() throws IOException {
+        if (inputPopUpOpen) {
+            return;
+        }
         baseText = baseTextField.getText();
         ((Stage)notButton.getScene().getWindow()).setTitle("Mastermind");
         App.setRoot("mastermindScreen");
@@ -163,24 +196,36 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void handleRevision(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         if (!k.isFull())
             return;
         base.Revise(k.evaluate());
         possibilitiesOl.setAll(base.getPossibilities().getSet());
         k = new Parenthesis();
         baseTextField.setText("⬚");
+        
     }
 
     @FXML
     public void handleResetBase(ActionEvent event) {
+        if (inputPopUpOpen) {
+            return;
+        }
         base = new BeliefBase();
         possibilitiesOl.setAll(base.getPossibilities().getSet());
     }
 
     @FXML
     public void handleResetBaseText() {
+        if (inputPopUpOpen) {
+            return;
+        }
         baseText = "⬚";
         k = new Parenthesis();
         baseTextField.setText(baseText);
     }
+
+        
 }

@@ -187,6 +187,23 @@ public class MastermindController implements Initializable {
 
         }
 
+        if (Logic.getGuessesMade() == 10) {
+            ButtonType newGame = new ButtonType("New Game", ButtonBar.ButtonData.OK_DONE);
+            ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            Alert alert = new Alert(AlertType.NONE,
+                    "You didn't guess the combination in 10 guesses. Start a new game.",
+                    newGame,
+                    cancel);
+
+            alert.setTitle("Game lost");
+            Optional<ButtonType> result = alert.showAndWait();
+
+            if (result.isPresent() && result.get() == newGame) {
+                newGame();
+            }
+            
+        }
+
     }
 
     private void newGame() {
@@ -204,6 +221,8 @@ public class MastermindController implements Initializable {
         selectedColour = Color.UNUSED;
         clearAllStrokes();
     }
+
+    
 
     public void updateIndicators(MatchRate match) {
         int row = Logic.getGuessesMade() - 1;

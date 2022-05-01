@@ -44,21 +44,6 @@
             <Font size="30.0" />
          </font>
       </TextField>
-      <Button fx:id="buttonUniverse" layoutX="1511.0" layoutY="143.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Universe">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonPossibilities" layoutX="1511.0" layoutY="243.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Possibilities">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonUpdate" layoutX="1511.0" layoutY="343.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="208.0" text="Update">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Button>
       <Button fx:id="buttonMastermind" layoutX="1511.0" layoutY="443.0" mnemonicParsing="false" onAction="#switchToMastermind" prefHeight="65.0" prefWidth="208.0" text="Mastermind">
          <font>
             <Font size="30.0" />
