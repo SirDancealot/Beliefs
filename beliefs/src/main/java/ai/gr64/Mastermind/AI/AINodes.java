@@ -1,4 +1,4 @@
-package ai.gr64;
+package ai.gr64.Mastermind.AI;
 
 import ai.gr64.belief.BeliefBase;
 import ai.gr64.Mastermind.MmPossibility;
@@ -36,20 +36,14 @@ public class AINodes {
         base.Revise(fromGuess);
 
 
-
-        pos1 = colors(c1);
-        pos2 = colors(c2);
-        pos3 = colors(c3);
-        pos4 = colors(c4);
-
         //Update the base set, only when you want to make the guess
-        base.Revise(combined);
+        // base.Revise(combined);
 
         //See what the base set would be if it was revised by combine, without updateing the base set
-        MmPossibilities pos = ((MmPossibilities)base.getPossibilities().innerJoin(combined));
+        // MmPossibilities pos = ((MmPossibilities)base.getPossibilities().innerJoin(combined));
 
         //Gets the number of different possibilities if the base set was revised with combined, without updating the base set
-        int numPossibilities = ((MmPossibilities)base.getPossibilities().innerJoin(combined)).getSet().size();
+        // int numPossibilities = ((MmPossibilities)base.getPossibilities().innerJoin(combined)).getSet().size();
 
         //Create one set of possibilities
         MmPossibilities pos1 = new MmPossibilities(new Color[]{ Color.RED, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.ORANGE }, 
@@ -61,30 +55,7 @@ public class AINodes {
         MmPossibilities pos2 = new MmPossibilities(new Color[]{ Color.BLACK }, new Color[]{ Color.RED, Color.CYAN, Color.GREEN, Color.MAGENTA, Color.ORANGE }, new Color[]{ Color.BLACK }, new Color[]{ Color.RED });
 
         //Add them together
-        MmPossibilities added = pos1.outerJoin(pos2);
+        MmPossibilities added = (MmPossibilities)pos1.outerJoin(pos2);
     }
-
-    private static Color[] colors(Color color) {
-        switch (color) {
-            case RED:
-                return "DARKRED";
-            case BLACK:
-                return "BLACK";
-            case GREEN:
-                return "LAWNGREEN";
-            case ORANGE:
-                return "ORANGERED";
-            case MAGENTA:
-                return "DEEPPINK";
-            case CYAN:
-                return "CYAN";
-        
-            default:
-                throw new Error("Value must be in range 0-5");
-        }
-        
-        return null;
-    }
-
     
 }

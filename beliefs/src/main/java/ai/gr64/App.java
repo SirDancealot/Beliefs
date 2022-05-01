@@ -1,7 +1,11 @@
 package ai.gr64;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import ai.gr64.Mastermind.AI.AIUtils;
+import ai.gr64.Mastermind.AI.Match;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,8 +38,8 @@ public class App extends Application{
     }
 
     public static void main(String[] args) {
-        launch();
 
+        launch();
     }
 
 }
