@@ -1,11 +1,12 @@
 package ai.gr64;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
+import ai.gr64.Mastermind.MmPossibilities;
+import ai.gr64.Mastermind.MmPossibility;
 import ai.gr64.Mastermind.AI.AIUtils;
-import ai.gr64.Mastermind.AI.Match;
+import ai.gr64.Mastermind.Game.Color;
+import ai.gr64.Mastermind.Game.MatchRate;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,7 +39,6 @@ public class App extends Application{
     }
 
     public static void main(String[] args) {
-
         launch();
     }
 
