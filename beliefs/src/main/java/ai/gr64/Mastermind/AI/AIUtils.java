@@ -169,7 +169,7 @@ public class AIUtils {
                             colors[i].add(Color.MAGENTA);
                             colors[i].add(Color.CYAN);
                             colors[i].add(Color.ORANGE);
-                            colors[i].remove(guess.getValue(intPerm[i]));
+                            colors[i].remove(guess.getValue(i));
                         } else {
                             colors[i].add(guess.getValue(intPerm[i]));
                         }
@@ -191,7 +191,7 @@ public class AIUtils {
                 }
             }
         }
-
+        combinedPossibilities.getSet().remove(guess);
         return combinedPossibilities;
     }
 
